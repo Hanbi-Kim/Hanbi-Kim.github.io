@@ -55,13 +55,23 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .lk:hover { color: var(--acc); }
 .lk::after { content: " ↗"; font-size: .8em; color: var(--mute); }
 [hidden] { display: none !important; }
-.top { max-width: 860px; margin: 0 auto; padding-top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.top { max-width: 860px; margin: 0 auto; padding-top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; align-items: center; gap: 18px; }
+.brand { font-weight: 700; font-size: 15px; color: var(--fg); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
+.top .lang { margin-left: auto; }
+@media (max-width: 480px) { .brand { display: none; } }
 .tabs { display: flex; gap: 2px; }
 .tabs a { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--mute); text-decoration: none; padding: 8px 12px; border-radius: 6px; white-space: nowrap; }
 .tabs a:hover { color: var(--fg); background: var(--soft); }
 .tabs a[aria-current="page"] { color: var(--fg); font-weight: 600; box-shadow: inset 0 -2px 0 var(--fg); border-radius: 0; }
 .tabs a:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
 .in { padding-top: 44px; }
+.ft { max-width: 860px; margin: 0 auto; padding: 24px 0 48px; border-top: 1px solid var(--line); display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--mono); font-size: 12px; color: var(--mute); }
+.more { margin-top: 4px; }
+.more summary { cursor: pointer; list-style: none; font-family: var(--mono); font-size: 12.5px; color: var(--mute); padding: 10px 0; }
+.more summary::-webkit-details-marker { display: none; }
+.more summary::before { content: "+ "; }
+.more[open] summary::before { content: "− "; }
+.more summary:hover { color: var(--fg); }
 .tab { display: grid; gap: 52px; }
 .tab[hidden] { display: none !important; }
 .hero { display: grid; gap: 22px; padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft); }
@@ -74,7 +84,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .hv figcaption { font-family: var(--mono); font-size: 11.5px; color: var(--mute); white-space: nowrap; overflow: hidden; }
 .hv figcaption a { color: inherit; }
 .hv figcaption a:hover { color: var(--acc); }
-.chips.logo span { display: inline-flex; align-items: center; gap: 6px; background: var(--bg); border: 1px solid var(--line); min-height: 26px; }
+.chips.logo span { display: inline-flex; align-items: center; gap: 6px; background: var(--soft); border: 1px solid var(--line); min-height: 26px; }
 .ic { width: 14px; height: 14px; fill: currentColor; flex: none; }
 .ic.mdb { color: #003545; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .ic.mdb { color: #9bd3e6; } }
@@ -100,6 +110,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .hg b { display: block; font-size: 14px; font-weight: 600; margin-bottom: 4px; line-height: 1.45; }
 .hg p { margin: 0; color: var(--mute); font-size: 13px; line-height: 1.6; }
 .gl { display: grid; gap: 14px; }
+.tab[data-t="gov"] .row { grid-template-columns: 92px minmax(0, 1fr); }
 .tab[data-t="gov"] .when { font-size: 16px; font-weight: 600; color: var(--fg); padding-top: 0; letter-spacing: 0; }
 .gi b { font-weight: 600; font-size: 15px; line-height: 1.5; }
 .gi .tag.lead { margin-left: 0; margin-right: 6px; }
@@ -116,6 +127,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 <body>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-python" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></symbol><symbol id="i-pytorch" viewBox="0 0 24 24"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></symbol><symbol id="i-onnx" viewBox="0 0 24 24"><path d="M23.0325 11.2963c-.0503 0-.1006 0-.1508.0126l-4.021-7.4387c.0754-.1383.1131-.289.1131-.4524 0-.5403-.4398-.9675-.9675-.9675-.2765 0-.5278.113-.7037.3015L9.286 1.156C9.2357.6785 8.821.3016 8.3184.3016c-.5277 0-.9675.4398-.9675.9675 0 .1634.0377.3141.113.4524l-6.245 8.9591c-.0753-.0251-.1633-.0377-.2513-.0377-.5403 0-.9675.4398-.9675.9676 0 .5403.4398.9675.9675.9675h.0377l3.3676 8.3309c-.0503.1257-.088.2639-.088.402 0 .5404.4398.9676.9676.9676.2764 0 .5277-.113.7036-.3015l10.1152.9926c.1005.4273.49.7288.9424.7288.5403 0 .9676-.4398.9676-.9675 0-.2388-.088-.465-.2262-.6283l5.1141-8.8712c.0503.0126.1005.0126.1634.0126.5403 0 .9675-.4398.9675-.9676 0-.5403-.4272-.98-.9675-.98zM17.2272 4.021c.1131.1508.2765.264.4524.3267l-1.533 11.5728c-.1005.0252-.1885.0503-.2764.1005L7.4513 8.708c.0251-.0754.0377-.1634.0377-.2514 0-.0628-.0126-.1256-.0126-.1884zm4.8754 8.5068l-5.177 3.556a1.105 1.105 0 0 0-.1256-.0753L18.3455 4.335h.0126l3.9456 7.288c-.1508.1759-.2388.3895-.2388.6408 0 .1005.0126.1885.0377.2638zM6.3832 7.5016c-.4649.0754-.8293.4775-.8293.955v.0628l-3.4555 2.0481 5.378-7.7026zm.3519 1.91c.1256-.0252.2513-.088.3518-.1634l8.356 7.2628c-.0377.113-.0628.2262-.0628.3518v.0503l-9.311 3.845c-.1382-.201-.3518-.3518-.6031-.402zm8.8963 8.1172c.1257.1382.3016.2513.5026.289l.465 4.046c-.201.1006-.3519.264-.4524.4524l-9.8136-.955zm1.1435.2136c.3267-.1633.5403-.49.5403-.867 0-.088-.0126-.1634-.0377-.2513l4.7372-3.2545-4.8 8.331zm.2513-14.3497l-9.889 4.31-.1131-.0755 1.2565-5.3906h.0377c.3393 0 .6409-.1759.8168-.4397l7.891 1.5706zM1.935 11.6105c0-.0629-.0126-.1257-.0126-.1885l3.9079-2.2995c.0754.0754.1633.1508.2638.201L4.8252 20.243l-3.2043-7.9036c.1885-.176.3142-.4398.3142-.7288Z"/></symbol><symbol id="i-nvidia" viewBox="0 0 24 24"><path d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></symbol><symbol id="i-docker" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></symbol><symbol id="i-mariadb" viewBox="0 0 24 24"><path d="M23.157 4.412c-.676.284-.79.31-1.673.372-.65.045-.757.057-1.212.209-.75.246-1.395.75-2.02 1.59-.296.398-1.249 1.913-1.249 1.988 0 .057-.65.998-.915 1.32-.574.713-1.08 1.079-2.14 1.59-.77.36-1.224.524-4.102 1.477-1.073.353-2.133.738-2.367.864-.852.449-1.515 1.036-2.203 1.938-1.003 1.32-.972 1.313-3.042.947a12.264 12.264 0 00-.675-.063c-.644-.05-1.023.044-1.332.334L0 17.193l.177.088c.094.05.353.234.561.398.215.17.461.347.55.391.088.044.17.088.183.101.012.013-.089.17-.228.353-.435.581-.593.871-.574 1.048.019.164.032.17.43.17.517-.006.826-.056 1.261-.208.65-.233 2.058-.94 2.784-1.4.776-.5 1.717-.998 1.956-1.042.082-.02.354-.07.594-.114.58-.107 1.464-.095 2.587.05.108.013.373.045.6.064.227.025.43.057.454.076.026.012.474.037.998.056.934.026 1.104.007 1.3-.189.126-.133.385-.631.498-.985.209-.643.417-.921.366-.492-.113.966-.322 1.692-.713 2.411-.259.499-.663 1.092-.934 1.395-.322.347-.315.36.088.315.619-.063 1.471-.397 2.096-.82.827-.562 1.647-1.691 2.19-3.03.107-.27.22-.22.183.083-.013.094-.038.315-.057.498l-.031.328.353-.202c.833-.48 1.414-1.262 2.127-2.884.227-.518.877-2.922 1.073-3.976a9.64 9.64 0 01.271-1.042c.127-.429.196-.555.48-.858.183-.19.625-.555.978-.808.72-.505.953-.75 1.187-1.205.208-.417.284-1.13.132-1.357-.132-.202-.284-.196-.763.006Z"/></symbol><symbol id="i-redis" viewBox="0 0 24 24"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></symbol><symbol id="i-minio" viewBox="0 0 24 24"><path d="M13.2072.006c-.6216-.0478-1.2.1943-1.6211.582a2.15 2.15 0 0 0-.0938 3.0352l3.4082 3.5507a3.042 3.042 0 0 1-.664 4.6875l-.463.2383V7.2853a15.4198 15.4198 0 0 0-8.0174 10.4862v.0176l6.5487-3.3281v7.621L13.7794 24V13.6817l.8965-.4629a4.4432 4.4432 0 0 0 1.2207-7.0292l-3.371-3.5254a.7489.7489 0 0 1 .037-1.0547.7522.7522 0 0 1 1.0567.0371l.4668.4863-.006.0059 4.0704 4.2441a.0566.0566 0 0 0 .082 0 .06.06 0 0 0 0-.0703l-3.1406-5.1425-.1484.1425.1484-.1445C14.4945.3926 13.8287.0538 13.2072.006Zm-.9024 9.8652v2.9941l-4.1523 2.1484a13.9787 13.9787 0 0 1 2.7676-3.9277 14.1784 14.1784 0 0 1 1.3847-1.2148z"/></symbol><symbol id="i-opencv" viewBox="0 0 24 24"><path d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></symbol><symbol id="i-plc" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2h3v3H7V8zm5 0h3v3h-3V8zm-5 5h3v3H7v-3zm5 0h3v3h-3v-3z"/></symbol></svg>
 <div class="top">
+  <a class="brand" href="#about" data-ko="김한비" data-en="Hanbi Kim">Hanbi Kim</a>
   <nav class="tabs" aria-label="Sections">
     <a href="#about" data-t="about" data-ko="소개" data-en="About">About</a>
     <a href="#gov" data-t="gov" data-ko="정부과제" data-en="Government R&amp;D">Government R&amp;D</a>
@@ -134,13 +146,14 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="contact"><span>hb.kim@dagyeom.com</span><span>github.com/Hanbi-Kim</span></div>
   </header>
 
+  <section><h2>기술</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div></section>
   <section><h2>경력</h2><div class="rows">
     <div class="row"><div class="when">2022.08–현재</div><div class="what"><b>다겸 주식회사 · AI팀 팀장 (책임연구원)</b><ul class="dl">
-        <li>컴퓨터비전 이상탐지 솔루션 <b>다겸아이킷(DagyeomEyekit)</b> 개발 — 라벨 없는 학습, 다중 클래스 이상탐지, 검사 서버·관제 화면</li>
-        <li>2차전지 동박 제박 라인 비전검사기 — 8K 라인스캔 결함 검출 알고리즘 개발, PLC 연동, 국내·해외 양산 라인 납품</li>
-        <li>반도체 장비 비전 AI — 웨이퍼 이송 이상탐지 모델 개발 및 장비 탑재, 반도체 특화 검사 파운데이션 모델 개발</li>
-        <li>정부 R&amp;D·실증 과제 기획·수행 — 사업계획서 작성부터 발표·현장평가 대응, 과제 수행·사업비 관리, 결과보고. AI바우처, AI 로봇 실증, 스마트공장 구축지원, 중소기업 스마트서비스, 데이터바우처 등</li>
-        <li>SCIE·KCI·국제학회 논문 게재, 특허 발명</li>
+        <li><b>다겸아이킷(DagyeomEyekit)</b> — 컴퓨터비전 이상탐지 솔루션 개발: 라벨 없는 학습, 다중 클래스 이상탐지, 검사 서버·관제 화면</li>
+        <li><b>동박 라인 비전검사기</b> — 8K 라인스캔 결함 검출 알고리즘, PLC 연동, 2차전지 소재 국내·해외 양산 라인 납품</li>
+        <li><b>반도체 장비 비전 AI</b> — 웨이퍼 이송 이상탐지 모델 개발·장비 탑재, 반도체 특화 검사 파운데이션 모델</li>
+        <li><b>정부 R&amp;D 과제</b> — 사업계획서부터 발표·현장평가, 수행·사업비 관리, 결과보고 (AI바우처, AI로봇 실증, 스마트공장, 스마트서비스, 데이터바우처 등)</li>
+        <li><b>연구</b> — SCIE·KCI·국제학회 논문, 특허 발명</li>
       </ul></div></div>
   </div></section>
 
@@ -164,12 +177,14 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2024.06</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102674551B1/ko" target="_blank" rel="noopener">주성분 분석 및 클러스터링을 통한 영상 요약 방법 및 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2674551</span></p></div></div>
     <div class="row"><div class="when">2024.05</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102665174B1/ko" target="_blank" rel="noopener">이상 탐지를 위한 전자 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2665174</span> · 중국 출원 <span class="no">202411276209.0</span></p></div></div>
     <div class="row"><div class="when">2024.03</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102646887B1/ko" target="_blank" rel="noopener">이미지 픽셀의 위치 가중치 설정을 포함하는 이상 탐지 방법 및 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2646887</span></p></div></div>
+  </div>
+  <details class="more"><summary>출원 특허 보기</summary><div class="rows">
     <div class="row"><div class="when">2026.10</div><div class="what"><b>이상 스코어맵의 정상 적합도에 따라 재검증 구간에 속하는 객체를 능동 재촬영으로 종결하는 검사 및 분류 방법<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0192189</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>비전-언어 기반 동작 위상 인덱싱을 이용한 자기교정형 이상 탐지 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134556</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>노드 그래프 기반 이종 기기 제어를 위한 사이클타임 보장형 자동 컴파일 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134558</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>삼중 관계 표현 학습을 이용하여 다중 클래스 이상 탐지를 수행하는 이상 탐지 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134560</span></p></div></div>
     <div class="row"><div class="when">2025.03</div><div class="what"><b>랜덤 마스킹과 생성형 인공지능을 이용한 불량 이미지 생성 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2025-0040269</span></p></div></div>
-  </div></section>
+  </div></details></section>
 
   <section><h2>활동</h2><div class="rows">
     <div class="row"><div class="when">2025.09</div><div class="what"><b>제3회 KSPO 스포츠산업 아카데미 · 강사</b><p>“기업경영을 위한 AI 활용 전략”</p></div></div>
@@ -185,9 +200,6 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2022.03</div><div class="what"><b>데이터분석 준전문가 (ADsP)</b><p>한국데이터산업진흥원</p></div></div>
   </div></section>
 
-  <section><h2>기술</h2><div class="chips">
-    <span>Python</span><span>PyTorch</span><span>ONNX</span><span>Triton</span><span>Docker</span><span>MariaDB</span><span>Redis</span><span>MinIO</span><span>Machine Vision</span><span>PLC</span>
-  </div></section>
  </div>
 
  <div class="tab" data-t="gov" hidden>
@@ -237,13 +249,15 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   <h2 class="ht">다겸아이킷 <span>DagyeomEyekit</span></h2>
   <p class="hl">다겸아이킷은 제조 현장의 결함을 카메라 영상으로 찾아내는 컴퓨터비전 이상탐지 솔루션입니다. 정상 이미지만으로 학습하기 때문에 불량 샘플을 모아 라벨링할 필요가 없고, 하나의 모델로 여러 품종과 결함 유형을 함께 다룹니다. 장비 안 CCTV로 동작 이상을 감시하는 에어리아 구성부터 롤투롤 라인의 8K/16K 라인스캔까지 현장에 맞춰 카메라·조명을 설계하고, 모델은 ONNX·Triton 추론 서버에서 실시간으로 돌리며, 결과는 PLC와 연동해 관제 화면에서 결함 위치·히트맵·목록으로 확인합니다. 2022년 다겸 AI팀을 꾸리면서 알고리즘·서버·화면을 처음부터 설계했고, 현재 반도체 장비·2차전지 동박·일반 제조 라인에서 운영 중입니다.</p>
   <figure class="hv"><video autoplay muted loop playsinline poster="poster.jpg" aria-label="다겸아이킷 라인스캔 검사 화면"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"></video><figcaption><a class="lk" href="https://www.enetnews.co.kr/news/articleView.html?idxno=55421" target="_blank" rel="noopener">다겸아이킷 라인스캔 검사 화면 — 결함 검출·히트맵·위치 분포·결함 목록 · 2026 산업AI EXPO(킨텍스, 10.21–23) 시연</a></figcaption></figure>
-  <div class="hg">
+</section>
+  <section>  <div class="hg">
     <div><span class="hk">AI</span><b>컴퓨터비전 이상탐지</b><p>정상 이미지만으로 학습하는 패치 기반 이상탐지, 다중 클래스 통합 모델, 라인스캔·에어리아 결함 검출 알고리즘</p></div>
     <div><span class="hk">MLOPS</span><b>ONNX · Triton 추론 서버</b><p>학습 모델을 ONNX로 내보내 Triton으로 서빙, Docker 배포, MariaDB·Redis·MinIO 기반 결과 저장과 실시간 관제</p></div>
     <div><span class="hk">ENGINEERING</span><b>머신비전 · PLC</b><p>GigE 에어리아·Camera Link 라인스캔 카메라, 조명·광학 설계, 8K/16K 라인스캔 구성, PLC 연동으로 결함 위치를 장비 좌표에 매핑, 현장 설치·시운전</p></div>
     <div><span class="hk">RESEARCH</span><b>논문 · 특허</b><p>관계 인식 표현 학습(CVIPPR 2026), 동적 손실 가중 다중모델 이상탐지(NCA 2025), 특허 등록 5·출원 6</p></div>
   </div>
-  <div class="ab"><div class="hk">솔루션 구성</div>
+</section>
+  <section><h2>솔루션 구성</h2>  <div class="ab">
 <svg class="arch" viewBox="0 0 900 380" role="img" aria-label="다겸아이킷 솔루션 구성도">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
 <text class="k" x="0" y="14">운영 — 현장 검사</text>
@@ -273,7 +287,8 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 <path class="a" d="M520,288 L520,148" marker-end="url(#ah)"/><text class="l" x="535" y="228" text-anchor="start">배포</text>
 </svg>
   </div>
-  <div class="rr">
+</section>
+  <section><h2>역할 · 실적</h2>  <div class="rr">
     <div><div class="hk">역할</div><ul class="dl">
       <li>AI팀 팀장으로 다겸아이킷 전체 설계 — 이상탐지 알고리즘, 추론 서버, 관제 화면, 현장 설치까지</li>
       <li>정상 이미지만으로 학습하는 패치 기반 이상탐지와 다중 클래스 통합 모델 연구·구현</li>
@@ -302,13 +317,14 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="contact"><span>hb.kim@dagyeom.com</span><span>github.com/Hanbi-Kim</span></div>
   </header>
 
+  <section><h2>Skills</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div></section>
   <section><h2>Experience</h2><div class="rows">
     <div class="row"><div class="when">2022.08–Present</div><div class="what"><b>Dagyeom Co., Ltd. · AI Team Lead (Principal Researcher)</b><ul class="dl">
-        <li>Developed <b>DagyeomEyekit</b>, a computer vision anomaly detection solution — label-free training, multi-class anomaly detection, inspection server and monitoring dashboard</li>
-        <li>Copper foil production-line vision inspection for secondary batteries — 8K line-scan defect detection algorithms, PLC integration, delivered to mass-production lines in Korea and overseas</li>
-        <li>Vision AI for semiconductor equipment — wafer transfer anomaly detection models deployed on equipment; semiconductor-specific inspection foundation model</li>
-        <li>Planned and executed government R&amp;D and demonstration projects — proposal writing, presentation and on-site evaluations, project execution, budget management and final reporting. AI Voucher, AI Robot Demonstration, Smart Factory, SME Smart Service, Data Voucher and more</li>
-        <li>Publications in SCIE, KCI and international conferences; patent inventions</li>
+        <li><b>DagyeomEyekit</b> — computer vision anomaly detection solution: label-free training, multi-class anomaly detection, inspection server and monitoring dashboard</li>
+        <li><b>Copper-foil line inspection</b> — 8K line-scan defect detection algorithms, PLC integration, delivered to battery-material mass-production lines in Korea and overseas</li>
+        <li><b>Vision AI for semiconductor equipment</b> — wafer-transfer anomaly detection models deployed on equipment; semiconductor-specific inspection foundation model</li>
+        <li><b>Government R&amp;D</b> — proposal writing, presentations and on-site evaluations, project execution, budget management and final reporting (AI Voucher, AI Robot Demonstration, Smart Factory, SME Smart Service, Data Voucher and more)</li>
+        <li><b>Research</b> — SCIE, KCI and international conference papers; patent inventions</li>
       </ul></div></div>
   </div></section>
 
@@ -332,12 +348,14 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2024.06</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102674551B1/ko" target="_blank" rel="noopener">Video Summarization Method and Device Using Principal Component Analysis and Clustering</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2674551</span></p></div></div>
     <div class="row"><div class="when">2024.05</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102665174B1/ko" target="_blank" rel="noopener">Electronic Device for Anomaly Detection</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2665174</span> · CN application <span class="no">202411276209.0</span></p></div></div>
     <div class="row"><div class="when">2024.03</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102646887B1/ko" target="_blank" rel="noopener">Anomaly Detection Method and Device Including Positional Weighting of Image Pixels</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2646887</span></p></div></div>
+  </div>
+  <details class="more"><summary>Show pending patents</summary><div class="rows">
     <div class="row"><div class="when">2026.10</div><div class="what"><b>Inspection and Classification Method Concluding Objects in the Re-verification Zone by Active Re-imaging According to the Normality Fit of Anomaly Score Maps<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0192189</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Self-Calibrating Anomaly Detection Device Using Vision-Language-Based Motion Phase Indexing<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134556</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Cycle-Time-Guaranteed Automatic Compilation Device for Node-Graph-Based Heterogeneous Device Control<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134558</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Anomaly Detection Device Performing Multi-Class Anomaly Detection Using Triplet Relation Representation Learning<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134560</span></p></div></div>
     <div class="row"><div class="when">2025.03</div><div class="what"><b>Defect Image Generation Device Using Random Masking and Generative AI<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2025-0040269</span></p></div></div>
-  </div></section>
+  </div></details></section>
 
   <section><h2>Activities</h2><div class="rows">
     <div class="row"><div class="when">2025.09</div><div class="what"><b>3rd KSPO Sports Industry Academy · Lecturer</b><p>“AI Strategy for Business Management”</p></div></div>
@@ -353,9 +371,6 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2022.03</div><div class="what"><b>Advanced Data Analytics Semi-Professional (ADsP)</b><p>Korea Data Agency</p></div></div>
   </div></section>
 
-  <section><h2>Skills</h2><div class="chips">
-    <span>Python</span><span>PyTorch</span><span>ONNX</span><span>Triton</span><span>Docker</span><span>MariaDB</span><span>Redis</span><span>MinIO</span><span>Machine Vision</span><span>PLC</span>
-  </div></section>
  </div>
 
  <div class="tab" data-t="gov" hidden>
@@ -405,13 +420,15 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   <h2 class="ht">DagyeomEyekit <span>다겸아이킷</span></h2>
   <p class="hl">DagyeomEyekit is a computer vision anomaly detection solution that finds defects on the factory floor from camera images. It learns from normal images only, so there is no need to collect and label defective samples, and one model covers multiple products and defect types. Camera and lighting are designed per site, from in-equipment CCTV that watches for operational anomalies to 8K/16K line-scan on roll-to-roll lines; models run in real time on an ONNX·Triton inference server, and results are tied to PLC signals and shown on a dashboard as defect positions, heatmaps and a defect log. I designed the algorithms, server and dashboard from scratch when the Dagyeom AI team was formed in 2022, and it now runs on semiconductor equipment, copper-foil and general manufacturing lines.</p>
   <figure class="hv"><video autoplay muted loop playsinline poster="poster.jpg" aria-label="DagyeomEyekit line-scan inspection screen"><source src="demo.webm" type="video/webm"><source src="demo.mp4" type="video/mp4"></video><figcaption><a class="lk" href="https://www.enetnews.co.kr/news/articleView.html?idxno=55421" target="_blank" rel="noopener">DagyeomEyekit line-scan inspection — defect detection, heatmaps, position map, defect log · 2026 Industrial AI EXPO (KINTEX, Oct 21–23)</a></figcaption></figure>
-  <div class="hg">
+</section>
+  <section>  <div class="hg">
     <div><span class="hk">AI</span><b>Computer vision anomaly detection</b><p>Patch-based anomaly detection trained on normal images only, a unified multi-class model, defect detection algorithms for line-scan and area cameras</p></div>
     <div><span class="hk">MLOPS</span><b>ONNX · Triton inference server</b><p>Models exported to ONNX and served with Triton, Docker deployment, MariaDB·Redis·MinIO for results and real-time monitoring</p></div>
     <div><span class="hk">ENGINEERING</span><b>Machine vision · PLC</b><p>GigE area and Camera Link line-scan cameras, lighting and optics design, 8K/16K line-scan setups, PLC integration mapping defects to equipment coordinates, on-site installation and commissioning</p></div>
     <div><span class="hk">RESEARCH</span><b>Papers · patents</b><p>Relation-aware representation learning (CVIPPR 2026), multi-model anomaly detection with dynamic loss weighting (NCA 2025), 5 patents granted · 6 pending</p></div>
   </div>
-  <div class="ab"><div class="hk">ARCHITECTURE</div>
+</section>
+  <section><h2>Architecture</h2>  <div class="ab">
 <svg class="arch" viewBox="0 0 900 380" role="img" aria-label="DagyeomEyekit architecture">
 <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="currentColor"/></marker></defs>
 <text class="k" x="0" y="14">RUNTIME — on-site inspection</text>
@@ -441,7 +458,8 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 <path class="a" d="M520,288 L520,148" marker-end="url(#ah)"/><text class="l" x="535" y="228" text-anchor="start">deploy</text>
 </svg>
   </div>
-  <div class="rr">
+</section>
+  <section><h2>Role & Track Record</h2>  <div class="rr">
     <div><div class="hk">ROLE</div><ul class="dl">
       <li>AI team lead owning the whole DagyeomEyekit design — anomaly detection algorithms, inference server, dashboard and on-site installation</li>
       <li>Research and implementation of patch-based anomaly detection trained on normal images only, and a unified multi-class model</li>
@@ -460,6 +478,8 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
  </div>
 </div>
 
+<footer class="ft"><span data-ko="최근 업데이트 2026.10" data-en="Last updated 2026.10">Last updated 2026.10</span><span>hb.kim@dagyeom.com</span><a class="lk" href="https://github.com/Hanbi-Kim" target="_blank" rel="noopener">github.com/Hanbi-Kim</a></footer>
+
 <script>
 (() => {
   const TABS = ["about", "gov", "projects"];
@@ -470,6 +490,8 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     document.documentElement.lang = lang;
     document.querySelectorAll(".lang button").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.l === lang)));
     document.querySelectorAll(".tab").forEach(t => t.hidden = t.dataset.t !== tab);
+    document.querySelectorAll(".ft [data-ko]").forEach(e => e.textContent = e.dataset[lang]);
+    { const b = document.querySelector(".brand"); if (b) b.textContent = b.dataset[lang]; }
     document.querySelectorAll(".tabs a").forEach(a => {
       a.textContent = a.dataset[lang];
       if (a.dataset.t === tab) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
