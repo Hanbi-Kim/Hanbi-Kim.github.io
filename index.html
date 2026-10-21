@@ -57,11 +57,11 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 [hidden] { display: none !important; }
 .top { max-width: 860px; margin: 0 auto; padding-top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 .tabs { display: flex; gap: 2px; }
-.tabs a { font-family: var(--mono); font-size: 12.5px; color: var(--mute); text-decoration: none; padding: 6px 10px; border-radius: 6px; white-space: nowrap; }
+.tabs a { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--mute); text-decoration: none; padding: 8px 12px; border-radius: 6px; white-space: nowrap; }
 .tabs a:hover { color: var(--fg); background: var(--soft); }
-.tabs a[aria-current="page"] { color: var(--fg); font-weight: 500; box-shadow: inset 0 -2px 0 var(--fg); border-radius: 0; }
+.tabs a[aria-current="page"] { color: var(--fg); font-weight: 600; box-shadow: inset 0 -2px 0 var(--fg); border-radius: 0; }
 .tabs a:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
-.in { padding-top: 40px; }
+.in { padding-top: 44px; }
 .tab { display: grid; gap: 52px; }
 .tab[hidden] { display: none !important; }
 .hero { display: grid; gap: 22px; padding: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--soft); }
@@ -107,7 +107,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .gl { gap: 18px; }
 
 .lang { display: inline-flex; gap: 2px; background: var(--soft); border-radius: 8px; padding: 3px; }
-.lang button { font: 500 12.5px var(--mono); border: 0; background: none; color: var(--mute); padding: 4px 9px; border-radius: 6px; cursor: pointer; }
+.lang button { font: 500 13px var(--mono); border: 0; background: none; color: var(--mute); padding: 5px 10px; border-radius: 6px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: var(--bg); color: var(--fg); box-shadow: 0 1px 2px rgba(0,0,0,.1); }
 .lang button:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
 </style>
