@@ -54,6 +54,8 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .dl { margin: 8px 0 0; padding-left: 18px; display: grid; gap: 5px; color: var(--mute); font-size: 13.5px; line-height: 1.6; }
 .dl b { font-size: inherit; font-weight: 600; color: var(--fg); }
 .dl li::marker { color: var(--acc2); }
+.what p.au { margin-top: 2px; }
+.what p.au strong { color: var(--fg); font-weight: 600; }
 .what p .no { font-family: var(--mono); font-size: 12.5px; }
 .tag { font-family: var(--mono); font-size: 11px; font-weight: 500; color: var(--acc2); border: 1px solid currentColor; border-radius: 4px; padding: 0 5px; margin-left: 6px; vertical-align: 2px; white-space: nowrap; }
 .tag.dim { color: var(--mute); }
@@ -112,6 +114,27 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .arch .l { font-size: 11.5px; font-weight: 500; fill: var(--fg); }
 .arch .a { fill: none; stroke: var(--mute); stroke-width: 1.2; color: var(--mute); }
 .arch .d { stroke: var(--line); stroke-dasharray: 4 4; }
+.cs { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+.cs article { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; background: var(--bg); }
+.cs img { display: block; width: 100%; height: auto; aspect-ratio: 2 / 1; object-fit: cover; background: var(--soft); }
+.sl { position: relative; border-bottom: 1px solid var(--line); }
+.sl-t { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.sl-t::-webkit-scrollbar { display: none; }
+.sl-t img { flex: 0 0 100%; scroll-snap-align: start; }
+.sl-b { position: absolute; top: 50%; transform: translateY(-50%); width: 28px; height: 28px; padding: 0; border: 0; border-radius: 50%; background: rgba(0, 0, 0, .45); color: #fff; font-size: 18px; line-height: 28px; cursor: pointer; opacity: 0; transition: opacity .15s; }
+.sl-b[data-d="-1"] { left: 8px; }
+.sl-b[data-d="1"] { right: 8px; }
+.sl:hover .sl-b, .sl-b:focus-visible { opacity: 1; }
+@media (hover: none) { .sl-b { display: none; } }
+.sl-d { position: absolute; left: 0; right: 0; bottom: 8px; display: flex; justify-content: center; gap: 6px; }
+.sl-d button { width: 7px; height: 7px; padding: 0; border: 0; border-radius: 50%; background: rgba(255, 255, 255, .55); box-shadow: 0 0 0 1px rgba(0, 0, 0, .3); cursor: pointer; }
+.sl-d button[aria-current="true"] { background: #fff; }
+.cs .cb { display: grid; gap: 8px; padding: 12px 14px 14px; }
+.cs b { font-size: 14.5px; font-weight: 600; line-height: 1.45; }
+.cs dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 4px 10px; margin: 0; font-size: 13px; line-height: 1.6; }
+.cs dt { font-family: var(--mono); font-size: 11px; color: var(--acc2); padding-top: 2px; }
+.cs dd { margin: 0; color: var(--mute); word-break: keep-all; overflow-wrap: anywhere; }
+.cs .chips span { font-size: 11.5px; padding: 2px 7px; }
 .hg { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
 .hg > div { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
 .hg .hk { display: block; margin-bottom: 6px; }
@@ -171,15 +194,16 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   </div></section>
 
   <section><h2>논문</h2><div class="rows">
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · 제1저자</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p>Neural Computing and Applications 37</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">블러 처리된 얼굴 이미지에 대한 성별 및 나이 추정을 위한 엣지 어텐션 기반 잔차 신경망</a><span class="tag">KCI</span></b><p>지능정보연구 (Journal of Intelligence and Information Systems) 31(3) · 제1저자</p></div></div>
-    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">딥러닝 기반의 렌즈 이상 탐지 알고리즘 성능 비교 및 적용</a><span class="tag">KCI</span></b><p>한국산업경영시스템학회지 (Journal of Society of Korea Industrial and Systems Engineering) 47(1) · 제1저자</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">심사 중</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><p>IEEE Access · 제2저자</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · 제1저자</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><p>Neural Computing and Applications 37</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">블러 처리된 얼굴 이미지에 대한 성별 및 나이 추정을 위한 엣지 어텐션 기반 잔차 신경망</a><span class="tag">KCI</span></b><p class="au"><strong>김한비</strong>, 고은정, 곽성현, 이지현, 이찬혁, 서원겸</p><p>지능정보연구 (Journal of Intelligence and Information Systems) 31(3) · 제1저자</p></div></div>
+    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">딥러닝 기반의 렌즈 이상 탐지 알고리즘 성능 비교 및 적용</a><span class="tag">KCI</span></b><p class="au"><strong>김한비</strong>, 서대호</p><p>한국산업경영시스템학회지 (Journal of Society of Korea Industrial and Systems Engineering) 47(1) · 제1저자</p></div></div>
   </div></section>
 
-  <section><h2>특허<small>등록 5 · 출원 6</small></h2><div class="rows">
-    <div class="row"><div class="when">2026.10</div><div class="what"><b>비보정 이상 점수의 재검증 구간을 능동 재촬영으로 처리하는 검사 및 분류 장치<span class="tag">등록</span></b><p>대한민국 <span class="no">10-3032856</span></p></div></div>
+  <section><h2>특허<small>등록 5 · 출원 7</small></h2><div class="rows">
+    <div class="row"><div class="when">2026.10</div><div class="what"><b><a class="lk" href="https://doi.org/10.8080/1020260134555" target="_blank" rel="noopener">비보정 이상 점수의 재검증 구간을 능동 재촬영으로 처리하는 검사 및 분류 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-3032856</span></p></div></div>
     <div class="row"><div class="when">2025.08</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102850664B1/ko" target="_blank" rel="noopener">시공간 특성 기반의 이상 탐지 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2850664</span></p></div></div>
     <div class="row"><div class="when">2024.06</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102674551B1/ko" target="_blank" rel="noopener">주성분 분석 및 클러스터링을 통한 영상 요약 방법 및 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2674551</span></p></div></div>
     <div class="row"><div class="when">2024.05</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102665174B1/ko" target="_blank" rel="noopener">이상 탐지를 위한 전자 장치</a><span class="tag">등록</span></b><p>대한민국 <span class="no">10-2665174</span> · 중국 출원 <span class="no">202411276209.0</span></p></div></div>
@@ -190,18 +214,28 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2026.07</div><div class="what"><b>비전-언어 기반 동작 위상 인덱싱을 이용한 자기교정형 이상 탐지 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134556</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>노드 그래프 기반 이종 기기 제어를 위한 사이클타임 보장형 자동 컴파일 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134558</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>삼중 관계 표현 학습을 이용하여 다중 클래스 이상 탐지를 수행하는 이상 탐지 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2026-0134560</span></p></div></div>
+    <div class="row"><div class="when">2025.12</div><div class="what"><b>도메인 일치도를 기반으로 손실 가중치를 보정하는 이상 탐지 서버<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2025-0195343</span></p></div></div>
     <div class="row"><div class="when">2025.03</div><div class="what"><b>랜덤 마스킹과 생성형 인공지능을 이용한 불량 이미지 생성 장치<span class="tag dim">출원</span></b><p>대한민국 <span class="no">10-2025-0040269</span></p></div></div>
   </div></details></section>
 
   <section><h2>활동</h2><div class="rows">
+    <div class="row"><div class="when">2026.05</div><div class="what"><b>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · 구두 발표</b><p>상하이 교통대학교</p><p>“Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection”</p></div></div>
     <div class="row"><div class="when">2025.09</div><div class="what"><b>제3회 KSPO 스포츠산업 아카데미 · 강사</b><p>“기업경영을 위한 AI 활용 전략”</p></div></div>
     <div class="row"><div class="when">2024.12</div><div class="what"><b>한국사회체육학회 추계학술대회 · 주제발표</b><p>“생활참여율 예측모형 개발”</p></div></div>
     <div class="row"><div class="when">2023.10</div><div class="what"><b>산업교육연구소 온디바이스 세미나 · 강연</b><p>“On-Device Model Deployment and Future”</p></div></div>
+    <div class="row"><div class="when">2023.03</div><div class="what"><b>성균관대학교 · 강화학습 특강 강사</b></div></div>
+  </div>
+  <details class="more"><summary>다른 활동 보기</summary><div class="rows">
+    <div class="row"><div class="when">2025.12</div><div class="what"><b>SKL 스포츠산업 AI 컨퍼런스 · 모더레이터</b></div></div>
+    <div class="row"><div class="when">2025.01</div><div class="what"><b><a class="lk" href="https://nhsjs.com/wp-content/uploads/2025/05/Computational-Analysis-of-NBA-Players-with-Machine-and-Deep-Learning.pdf" target="_blank" rel="noopener">The National High School Journal of Science (NHSJS) · 고등학생 논문 지도</a></b><p>“Computational Analysis of NBA Players with Machine and Deep Learning”</p></div></div>
+    <div class="row"><div class="when">2024.03</div><div class="what"><b>한국스포츠정책과학원 연구과제 · 공동연구자</b><p>“Development of a Predictive Model for Consumer Expenditure in the Sports Industry”</p></div></div>
+    <div class="row"><div class="when">2024.01</div><div class="what"><b><a class="lk" href="https://www.jsr.org/hs/index.php/path/article/view/6289/2808" target="_blank" rel="noopener">Journal of Student Research (JSR) · 고등학생 논문 지도</a></b><p>“Web Crawling Tripadvisor to Develop a Restaurant Recommendation System for Los Angeles”</p></div></div>
     <div class="row"><div class="when">2022.09</div><div class="what"><b>2022 K-디지털 해커톤 · 멘토</b></div></div>
     <div class="row"><div class="when">2022.02</div><div class="what"><b>이화여자대학교 교육학과 · 외부 강사</b><p>R을 활용한 데이터 분석</p></div></div>
+    <div class="row"><div class="when">2021.02</div><div class="what"><b>성균관대학교 · 수업조교 (TA)</b><p>AI 기초와 활용 · 강화학습 우수학부 연구학점제</p></div></div>
     <div class="row"><div class="when">2020.05</div><div class="what"><b>한겨레신문사 업데이타 · 외부 강사</b><p>파이썬 기초 프로그래밍</p></div></div>
     <div class="row"><div class="when">2020.03</div><div class="what"><b>연세대학교 사회학과 · 외부 강사</b><p>텍스트마이닝</p></div></div>
-  </div></section>
+  </div></details></section>
   <section><h2>자격</h2><div class="rows">
     <div class="row"><div class="when">2022.07</div><div class="what"><b>빅데이터분석기사</b><p>한국데이터산업진흥원</p></div></div>
     <div class="row"><div class="when">2022.03</div><div class="what"><b>데이터분석 준전문가 (ADsP)</b><p>한국데이터산업진흥원</p></div></div>
@@ -262,7 +296,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div><span class="hk">AI</span><b>컴퓨터비전 이상탐지</b><p>정상 이미지만으로 학습하는 패치 기반 이상탐지, 다중 클래스 통합 모델, 라인스캔·에어리아 결함 검출 알고리즘</p></div>
     <div><span class="hk">MLOPS</span><b>ONNX · Triton 추론 서버</b><p>학습 모델을 ONNX로 내보내 Triton으로 서빙, Docker 배포, MariaDB·Redis·MinIO 기반 결과 저장과 실시간 관제</p></div>
     <div><span class="hk">ENGINEERING</span><b>머신비전 · PLC</b><p>GigE 에어리아·Camera Link 라인스캔 카메라, 조명·광학 설계, 8K/16K 라인스캔 구성, PLC 연동으로 결함 위치를 장비 좌표에 매핑, 현장 설치·시운전</p></div>
-    <div><span class="hk">RESEARCH</span><b>논문 · 특허</b><p>관계 인식 표현 학습(CVIPPR 2026), 동적 손실 가중 다중모델 이상탐지(NCA 2025), 특허 등록 5·출원 6</p></div>
+    <div><span class="hk">RESEARCH</span><b>논문 · 특허</b><p>관계 인식 표현 학습(CVIPPR 2026), 동적 손실 가중 다중모델 이상탐지(NCA 2025), 특허 등록 5·출원 7</p></div>
   </div>
 </section>
   <section><h2>솔루션 구성</h2>  <div class="ab">
@@ -306,12 +340,17 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div><div class="hk">실적</div><ul class="dl">
       <li>반도체 장비·2차전지·정밀부품 등 적용 사례 10건 (반도체 6 · 배터리 2 · 정밀부품·소재 2), 2차전지 동박 제박 라인 비전검사기 국내·해외 양산 라인 납품 — 누적 매출 10억 원 이상</li>
       <li>정부과제 5건에서 공인인증시험 신청·취득</li>
-      <li>관련 논문 SCIE 1편·국제학회 1편, 특허 등록 5건·출원 6건</li>
+      <li>관련 논문 SCIE 1편·국제학회 1편, 특허 등록 5건·출원 7건</li>
       <li>2026 산업AI EXPO 라인스캔 검사 시연</li>
     </ul></div>
   </div>
   <div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div>
 </section>
+  <section><h2>적용 사례</h2><div class="cs">
+    <article><div class="sl"><div class="sl-t"><img src="case_food.jpg" alt="포장 실링 찢김 부위와 이상탐지 히트맵" width="675" height="290" loading="lazy"><img src="case_food_2.jpg" alt="마킹(초록 상자) 사이 상부 실링 영역(빨간 상자) 검출" width="1200" height="600" loading="lazy"><img src="case_food_3.jpg" alt="학습에 쓴 정상 실링 이미지" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="이전 그림">‹</button><button type="button" class="sl-b" data-d="1" aria-label="다음 그림">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">식품 포장 · 2025.03</div><b>식품 포장 실링 이상탐지<span class="tag dim">자체 테스트</span></b><dl><dt>문제</dt><dd>빠르게 흐르는 소포장 봉지의 상부 실링 찢김·불량 확인</dd><dt>방법</dt><dd>인쇄 마킹이 지정 영역에 들어오면 제품을 잡고, 마킹 사이 실링 부위만 잘라 정상 이미지만으로 학습한 이상탐지 모델로 판정</dd><dt>결과</dt><dd>실링 찢김 위치를 히트맵으로 보여 주는 실시간 검출 시연 (불량은 임의로 만든 샘플)</dd></dl><div class="chips"><span>마킹 검출</span><span>정상 학습 이상탐지</span><span>히트맵</span></div></div></article>
+    <article><div class="sl"><div class="sl-t"><img src="case_seed.jpg" alt="종자 판별 화면 — 개체별 검출과 PaDiM 이상탐지 결과" width="1200" height="472" loading="lazy"><img src="case_seed_2.jpg" alt="SAM2 포인트 클릭 자동 라벨링으로 육묘 영역 분할" width="1200" height="600" loading="lazy"><img src="case_seed_3.jpg" alt="판 이미지에서 개체별로 잘라낸 종자 모음" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="이전 그림">‹</button><button type="button" class="sl-b" data-d="1" aria-label="다음 그림">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">농업 · 2025.04</div><b>육묘·종자 사전 판별<span class="tag dim">자체 테스트</span></b><dl><dt>문제</dt><dd>육묘·종자 상태를 눈으로 고르면 손이 많이 들고 사람마다 기준이 다름</dd><dt>방법</dt><dd>SAM2 포인트 클릭 자동 라벨링으로 영역 데이터를 만들어 분할 모델 학습 → 개체별로 잘라 PaDiM 비지도 이상탐지. 라벨링·분석 화면 직접 개발</dd><dt>결과</dt><dd>판 단위 이미지에서 개체마다 정상/비정상 판정과 크기·면적 산출</dd></dl><div class="chips"><span>SAM2</span><span>Segmentation</span><span>PaDiM</span><span>Streamlit</span></div></div></article>
+    <article><div class="sl"><div class="sl-t"><img src="case_meat.jpg" alt="돼지고기 등급 분류 화면 — 검출 영역, 지방·살코기 분리, 측정값" width="1200" height="566" loading="lazy"><img src="case_meat_2.jpg" alt="날짜별 등급 분포와 샘플 목록 대시보드" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="이전 그림">‹</button><button type="button" class="sl-b" data-d="1" aria-label="다음 그림">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">식육 · 2025.11</div><b>돼지고기 등급 분류<span class="tag dim">자체 테스트</span></b><dl><dt>문제</dt><dd>지방·살코기 비율과 단면 크기로 매기는 등급을 자동으로 판정</dd><dt>방법</dt><dd>YOLO로 라인 위 고기 검출 → HSV로 지방·살코기 분리 → 카메라 픽셀 분해능으로 실제 폭·높이·면적 계산. FastAPI · Triton(ONNX) · MinIO · MariaDB · Redis, PLC 센서값 연동</dd><dt>결과</dt><dd>실시간 모니터링, 등급 분포 대시보드, 엑셀 내보내기, 라벨링 화면까지 갖춘 검사 프로그램 시연</dd></dl><div class="chips"><span>YOLO</span><span>HSV</span><span>Triton</span><span>Electron</span></div></div></article>
+  </div></section>
  </div>
 </div>
 
@@ -342,15 +381,16 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   </div></section>
 
   <section><h2>Publications</h2><div class="rows">
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · First author</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p>Neural Computing and Applications 37</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">Edge Attention-Based Residual Network for Gender and Age Estimation on Blurred Face Images</a><span class="tag">KCI</span></b><p>Journal of Intelligence and Information Systems 31(3) · First author</p></div></div>
-    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">Performance Comparison and Application of Deep Learning-Based Lens Anomaly Detection Algorithms</a><span class="tag">KCI</span></b><p>Journal of Society of Korea Industrial and Systems Engineering 47(1) · First author</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">Under review</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><p>IEEE Access · Second author</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · First author</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><p>Neural Computing and Applications 37</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">Edge Attention-Based Residual Network for Gender and Age Estimation on Blurred Face Images</a><span class="tag">KCI</span></b><p class="au"><strong>Hanbi Kim</strong> et al.</p><p>Journal of Intelligence and Information Systems 31(3) · First author</p></div></div>
+    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">Performance Comparison and Application of Deep Learning-Based Lens Anomaly Detection Algorithms</a><span class="tag">KCI</span></b><p class="au"><strong>Hanbi Kim</strong>, Daeho Seo</p><p>Journal of Society of Korea Industrial and Systems Engineering 47(1) · First author</p></div></div>
   </div></section>
 
-  <section><h2>Patents<small>5 granted · 6 pending</small></h2><div class="rows">
-    <div class="row"><div class="when">2026.10</div><div class="what"><b>Inspection and Classification Device Handling the Re-verification Zone of Uncalibrated Anomaly Scores by Active Re-imaging<span class="tag">Granted</span></b><p>KR <span class="no">10-3032856</span></p></div></div>
+  <section><h2>Patents<small>5 granted · 7 pending</small></h2><div class="rows">
+    <div class="row"><div class="when">2026.10</div><div class="what"><b><a class="lk" href="https://doi.org/10.8080/1020260134555" target="_blank" rel="noopener">Inspection and Classification Device Handling the Re-verification Zone of Uncalibrated Anomaly Scores by Active Re-imaging</a><span class="tag">Granted</span></b><p>KR <span class="no">10-3032856</span></p></div></div>
     <div class="row"><div class="when">2025.08</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102850664B1/ko" target="_blank" rel="noopener">Anomaly Detection Device Based on Spatio-Temporal Features</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2850664</span></p></div></div>
     <div class="row"><div class="when">2024.06</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102674551B1/ko" target="_blank" rel="noopener">Video Summarization Method and Device Using Principal Component Analysis and Clustering</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2674551</span></p></div></div>
     <div class="row"><div class="when">2024.05</div><div class="what"><b><a class="lk" href="https://patents.google.com/patent/KR102665174B1/ko" target="_blank" rel="noopener">Electronic Device for Anomaly Detection</a><span class="tag">Granted</span></b><p>KR <span class="no">10-2665174</span> · CN application <span class="no">202411276209.0</span></p></div></div>
@@ -361,18 +401,28 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Self-Calibrating Anomaly Detection Device Using Vision-Language-Based Motion Phase Indexing<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134556</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Cycle-Time-Guaranteed Automatic Compilation Device for Node-Graph-Based Heterogeneous Device Control<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134558</span></p></div></div>
     <div class="row"><div class="when">2026.07</div><div class="what"><b>Anomaly Detection Device Performing Multi-Class Anomaly Detection Using Triplet Relation Representation Learning<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2026-0134560</span></p></div></div>
+    <div class="row"><div class="when">2025.12</div><div class="what"><b>Anomaly Detection Server Calibrating Loss Weights Based on Domain Agreement<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2025-0195343</span></p></div></div>
     <div class="row"><div class="when">2025.03</div><div class="what"><b>Defect Image Generation Device Using Random Masking and Generative AI<span class="tag dim">Pending</span></b><p>KR <span class="no">10-2025-0040269</span></p></div></div>
   </div></details></section>
 
   <section><h2>Activities</h2><div class="rows">
+    <div class="row"><div class="when">2026.05</div><div class="what"><b>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · Oral Presentation</b><p>Shanghai Jiao Tong University</p><p>“Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection”</p></div></div>
     <div class="row"><div class="when">2025.09</div><div class="what"><b>3rd KSPO Sports Industry Academy · Lecturer</b><p>“AI Strategy for Business Management”</p></div></div>
     <div class="row"><div class="when">2024.12</div><div class="what"><b>Korean Society for the Sociology of Sport, Fall Conference · Presenter</b><p>“Developing a Prediction Model for Sports Participation Rate”</p></div></div>
     <div class="row"><div class="when">2023.10</div><div class="what"><b>Industrial Education Institute, On-Device Seminar · Speaker</b><p>“On-Device Model Deployment and Future”</p></div></div>
+    <div class="row"><div class="when">2023.03</div><div class="what"><b>Sungkyunkwan University · Reinforcement Learning Special Lecture</b></div></div>
+  </div>
+  <details class="more"><summary>Show more activities</summary><div class="rows">
+    <div class="row"><div class="when">2025.12</div><div class="what"><b>SKL Sports Industry AI Conference · Moderator</b></div></div>
+    <div class="row"><div class="when">2025.01</div><div class="what"><b><a class="lk" href="https://nhsjs.com/wp-content/uploads/2025/05/Computational-Analysis-of-NBA-Players-with-Machine-and-Deep-Learning.pdf" target="_blank" rel="noopener">The National High School Journal of Science (NHSJS) · Research Mentor</a></b><p>“Computational Analysis of NBA Players with Machine and Deep Learning”</p></div></div>
+    <div class="row"><div class="when">2024.03</div><div class="what"><b>Korea Institute of Sport Science, Research Project · Co-researcher</b><p>“Development of a Predictive Model for Consumer Expenditure in the Sports Industry”</p></div></div>
+    <div class="row"><div class="when">2024.01</div><div class="what"><b><a class="lk" href="https://www.jsr.org/hs/index.php/path/article/view/6289/2808" target="_blank" rel="noopener">Journal of Student Research (JSR) · Research Mentor</a></b><p>“Web Crawling Tripadvisor to Develop a Restaurant Recommendation System for Los Angeles”</p></div></div>
     <div class="row"><div class="when">2022.09</div><div class="what"><b>2022 K-Digital Hackathon · Mentor</b></div></div>
     <div class="row"><div class="when">2022.02</div><div class="what"><b>Ewha Womans University, Dept. of Education · Guest Lecturer</b><p>Data Analysis with R</p></div></div>
+    <div class="row"><div class="when">2021.02</div><div class="what"><b>Sungkyunkwan University · Teaching Assistant</b><p>Introduction to AI and Applications · Reinforcement Learning Undergraduate Research Program</p></div></div>
     <div class="row"><div class="when">2020.05</div><div class="what"><b>Hankyoreh Updata · Guest Lecturer</b><p>Python Programming Basics</p></div></div>
     <div class="row"><div class="when">2020.03</div><div class="what"><b>Yonsei University, Dept. of Sociology · Guest Lecturer</b><p>Text Mining</p></div></div>
-  </div></section>
+  </div></details></section>
   <section><h2>Certifications</h2><div class="rows">
     <div class="row"><div class="when">2022.07</div><div class="what"><b>Engineer Big Data Analysis</b><p>Korea Data Agency</p></div></div>
     <div class="row"><div class="when">2022.03</div><div class="what"><b>Advanced Data Analytics Semi-Professional (ADsP)</b><p>Korea Data Agency</p></div></div>
@@ -433,7 +483,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div><span class="hk">AI</span><b>Computer vision anomaly detection</b><p>Patch-based anomaly detection trained on normal images only, a unified multi-class model, defect detection algorithms for line-scan and area cameras</p></div>
     <div><span class="hk">MLOPS</span><b>ONNX · Triton inference server</b><p>Models exported to ONNX and served with Triton, Docker deployment, MariaDB·Redis·MinIO for results and real-time monitoring</p></div>
     <div><span class="hk">ENGINEERING</span><b>Machine vision · PLC</b><p>GigE area and Camera Link line-scan cameras, lighting and optics design, 8K/16K line-scan setups, PLC integration mapping defects to equipment coordinates, on-site installation and commissioning</p></div>
-    <div><span class="hk">RESEARCH</span><b>Papers · patents</b><p>Relation-aware representation learning (CVIPPR 2026), multi-model anomaly detection with dynamic loss weighting (NCA 2025), 5 patents granted · 6 pending</p></div>
+    <div><span class="hk">RESEARCH</span><b>Papers · patents</b><p>Relation-aware representation learning (CVIPPR 2026), multi-model anomaly detection with dynamic loss weighting (NCA 2025), 5 patents granted · 7 pending</p></div>
   </div>
 </section>
   <section><h2>Architecture</h2>  <div class="ab">
@@ -477,12 +527,17 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div><div class="hk">TRACK RECORD</div><ul class="dl">
       <li>10 deployments across semiconductor equipment, batteries and precision parts (6 semiconductor · 2 battery · 2 precision parts/materials), including copper-foil line inspection delivered to domestic and overseas mass-production lines — over KRW 1B in cumulative revenue</li>
       <li>Applied for and obtained certification testing in 5 government-funded projects</li>
-      <li>1 SCIE journal paper and 1 international conference paper; 5 patents granted, 6 pending</li>
+      <li>1 SCIE journal paper and 1 international conference paper; 5 patents granted, 7 pending</li>
       <li>Line-scan inspection demo at 2026 Industrial AI EXPO</li>
     </ul></div>
   </div>
   <div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div>
 </section>
+  <section><h2>Case Studies</h2><div class="cs">
+    <article><div class="sl"><div class="sl-t"><img src="case_food.jpg" alt="Torn seal region and anomaly heatmap" width="675" height="290" loading="lazy"><img src="case_food_2.jpg" alt="Seal region (red) detected between printed marks (green)" width="1200" height="600" loading="lazy"><img src="case_food_3.jpg" alt="Normal seal crops used for training" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="Previous image">‹</button><button type="button" class="sl-b" data-d="1" aria-label="Next image">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">Food packaging · 2025.03</div><b>Seal Anomaly Detection for Food Packaging<span class="tag dim">In-house test</span></b><dl><dt>Problem</dt><dd>Checking torn or faulty top seals on small sachets moving at line speed</dd><dt>Approach</dt><dd>Trigger on printed marks entering a fixed zone, crop only the seal between marks, and judge it with an anomaly model trained on normal images only</dd><dt>Result</dt><dd>Real-time detection demo that localizes seal tears with a heatmap (defects were synthetic samples)</dd></dl><div class="chips"><span>Mark detection</span><span>Normal-only anomaly detection</span><span>Heatmap</span></div></div></article>
+    <article><div class="sl"><div class="sl-t"><img src="case_seed.jpg" alt="Seed screening screen — per-object detection and PaDiM anomaly result" width="1200" height="472" loading="lazy"><img src="case_seed_2.jpg" alt="Seedling segmentation from SAM2 point-click auto-labeling" width="1200" height="600" loading="lazy"><img src="case_seed_3.jpg" alt="Per-seed crops extracted from a tray image" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="Previous image">‹</button><button type="button" class="sl-b" data-d="1" aria-label="Next image">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">Agriculture · 2025.04</div><b>Seedling and Seed Pre-screening<span class="tag dim">In-house test</span></b><dl><dt>Problem</dt><dd>Sorting seedlings and seeds by eye is labor-intensive and inconsistent between workers</dd><dt>Approach</dt><dd>Point-click auto-labeling with SAM2 to train a segmentation model, then per-object PaDiM unsupervised anomaly detection; built the labeling and analysis UI</dd><dt>Result</dt><dd>Per-object normal/abnormal decision plus size and area from a full-tray image</dd></dl><div class="chips"><span>SAM2</span><span>Segmentation</span><span>PaDiM</span><span>Streamlit</span></div></div></article>
+    <article><div class="sl"><div class="sl-t"><img src="case_meat.jpg" alt="Pork grading screen — detected region, fat/lean separation and measurements" width="1200" height="566" loading="lazy"><img src="case_meat_2.jpg" alt="Dashboard with daily grade distribution and samples" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="Previous image">‹</button><button type="button" class="sl-b" data-d="1" aria-label="Next image">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">Meat processing · 2025.11</div><b>Pork Grade Classification<span class="tag dim">In-house test</span></b><dl><dt>Problem</dt><dd>Automating grades based on fat/lean ratio and cut size</dd><dt>Approach</dt><dd>YOLO detection on the line → HSV fat/lean separation → real width, height and area from camera pixel resolution; FastAPI, Triton (ONNX), MinIO, MariaDB, Redis and PLC sensor data</dd><dt>Result</dt><dd>Inspection program demo with live monitoring, grade-distribution dashboard, Excel export and labeling screen</dd></dl><div class="chips"><span>YOLO</span><span>HSV</span><span>Triton</span><span>Electron</span></div></div></article>
+  </div></section>
  </div>
 </div>
 
@@ -518,6 +573,20 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   if (lang !== "ko") lang = "en";
   fromHash();
 })();
+// 적용 사례 카드: 그림 넘겨 보기 (스와이프·화살표·점)
+document.querySelectorAll(".sl").forEach(sl => {
+  const t = sl.querySelector(".sl-t"), dots = sl.querySelector(".sl-d"), n = t.children.length;
+  for (let i = 0; i < n; i++) { const b = document.createElement("button"); b.type = "button"; b.dataset.i = i; b.setAttribute("aria-label", `${i + 1} / ${n}`); dots.append(b); }
+  const cur = () => Math.round(t.scrollLeft / (t.clientWidth || 1));
+  const mark = () => [...dots.children].forEach((b, i) => b.setAttribute("aria-current", String(i === cur())));
+  const go = i => t.scrollTo({ left: i * t.clientWidth, behavior: "smooth" });
+  sl.addEventListener("click", e => {
+    const d = e.target.closest("[data-i]"), a = e.target.closest(".sl-b");
+    if (d) go(Number(d.dataset.i)); else if (a) go((cur() + Number(a.dataset.d) + n) % n);
+  });
+  t.addEventListener("scroll", mark, { passive: true });
+  mark();
+});
 </script>
 </body>
 </html>
