@@ -40,6 +40,9 @@ h1 span { color: var(--mute); font-weight: 400; font-size: .55em; margin-left: 1
 .lead { font-size: 16px; line-height: 1.75; max-width: 62ch; margin: 0; }
 .lead em { font-style: normal; color: var(--acc); font-weight: 600; }
 .contact { display: flex; flex-wrap: wrap; gap: 6px 18px; font-family: var(--mono); font-size: 13px; color: var(--mute); }
+.contact a { display: inline-flex; align-items: center; gap: 6px; color: inherit; text-decoration: none; }
+.contact a:hover { color: var(--fg); }
+.contact .gh { color: var(--fg); }
 section { display: grid; grid-template-columns: minmax(0, 1fr); gap: 16px; }
 section > h2 { font-size: 18px; font-weight: 700; padding-bottom: 10px; border-bottom: 2px solid var(--fg); display: flex; align-items: baseline; gap: 10px; }
 section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px; color: var(--mute); }
@@ -64,12 +67,31 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .lk { color: inherit; text-decoration: none; }
 .lk:hover { color: var(--acc); }
 .lk::after { content: " ↗"; font-size: .8em; color: var(--mute); }
+.pp { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.pa { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 20px; padding: 16px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); align-items: start; }
+.pa figure { margin: 0; min-width: 0; }
+.pa figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 8px; background: #fff; }
+.pa figcaption { margin-top: 6px; font-size: 12px; color: var(--mute); line-height: 1.5; }
+.pa .pb { min-width: 0; display: grid; gap: 8px; align-content: start; }
+.pa .pb > b { font-size: 15.5px; font-weight: 700; line-height: 1.45; }
+.pa .au { margin: 0; font-size: 13px; color: var(--mute); line-height: 1.6; }
+.pa .au strong { color: var(--fg); font-weight: 600; }
+.pa dl { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 5px 10px; margin: 2px 0 0; font-size: 13.5px; line-height: 1.65; }
+.pa dt { font-family: var(--mono); font-size: 11px; color: var(--acc2); padding-top: 3px; }
+.pa dd { margin: 0; color: var(--mute); word-break: keep-all; overflow-wrap: anywhere; }
+.pa .chips span { font-size: 11.5px; padding: 2px 7px; }
+.pg { font-size: 14.5px; font-weight: 700; margin: 0 0 10px; }
+.pp + .pg { margin-top: 30px; }
+@media (max-width: 720px) { .pa { grid-template-columns: minmax(0, 1fr); gap: 14px; } }
 [hidden] { display: none !important; }
 .top { max-width: 860px; margin: 0 auto; padding-top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; align-items: center; gap: 18px; }
 .brand { font-weight: 700; font-size: 15px; color: var(--fg); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
 .top .lang { margin-left: auto; }
 @media (max-width: 480px) { .brand { display: none; } }
-.tabs { display: flex; gap: 2px; }
+.tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
+.tabs::-webkit-scrollbar { display: none; }
+.top .lang { flex: none; }
+@media (max-width: 480px) { .top { gap: 8px; } .tabs a { padding: 8px 9px; } }
 .tabs a { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--mute); text-decoration: none; padding: 8px 12px; border-radius: 6px; white-space: nowrap; }
 .tabs a:hover { color: var(--fg); background: var(--soft); }
 .tabs a[aria-current="page"] { color: var(--fg); font-weight: 600; box-shadow: inset 0 -2px 0 var(--fg); border-radius: 0; }
@@ -135,6 +157,43 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .cs dt { font-family: var(--mono); font-size: 11px; color: var(--acc2); padding-top: 2px; }
 .cs dd { margin: 0; color: var(--mute); word-break: keep-all; overflow-wrap: anywhere; }
 .cs .chips span { font-size: 11.5px; padding: 2px 7px; }
+.fx { display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.fr { display: grid; grid-template-columns: 64px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--bg); color: inherit; text-decoration: none; }
+.fd > .fr:hover { background: var(--soft); }
+.fd > .fr:focus-visible { outline: 2px solid var(--acc); outline-offset: 1px; }
+.fr img, .fr .th { width: 64px; height: 64px; border-radius: 8px; object-fit: cover; background: var(--soft); }
+.fr .th { display: grid; place-items: center; color: var(--mute); }
+.fr .th svg { width: 26px; height: 26px; fill: currentColor; }
+.fr b { display: block; font-size: 14.5px; font-weight: 600; line-height: 1.45; margin-top: 2px; }
+.fr p { margin: 2px 0 0; color: var(--mute); font-size: 13px; line-height: 1.55; word-break: keep-all; }
+.fr .go { color: var(--mute); font-size: 22px; line-height: 1; padding: 0 2px; }
+.fd { border: 1px solid var(--line); border-radius: 12px; background: var(--bg); }
+.fd > .fr { border: 0; list-style: none; cursor: pointer; }
+.fd > .fr::-webkit-details-marker { display: none; }
+.fd[open] > .fr { border-radius: 12px 12px 0 0; }
+.fr .go { transition: transform .15s; }
+.fd[open] .go { transform: rotate(90deg); }
+.fa { min-width: 0; padding: 16px 20px 20px; border-top: 1px solid var(--line); }
+.fa h3 { font-size: 15.5px; font-weight: 700; margin: 26px 0 8px; }
+.fa p, .fa li { font-size: 14.5px; line-height: 1.8; word-break: keep-all; }
+.fa p { margin: 0 0 10px; }
+.fa p.ld { color: var(--mute); }
+.fa ul, .fa ol { margin: 0 0 10px; padding-left: 20px; }
+.fa figure { margin: 10px 0 14px; }
+.fa figure img { display: block; width: 100%; height: auto; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
+.fa figure.sm img { width: auto; max-width: 100%; }
+.fa figcaption { margin-top: 6px; font-size: 12.5px; color: var(--mute); }
+.fa .f2 { display: grid; grid-template-columns: minmax(0, 1.9fr) minmax(0, 1fr); gap: 12px; align-items: start; }
+.fa pre { max-width: 100%; margin: 10px 0 12px; padding: 12px 14px; background: var(--soft); border-radius: 10px; overflow-x: auto; font: 12.5px/1.6 var(--mono); }
+.fa code { font: 13px var(--mono); }
+.fa pre code { font: inherit; }
+.fa figure:has(> svg.dg) { overflow-x: auto; }
+.fa svg.dg { display: block; width: 100%; min-width: 480px; height: auto; border: 1px solid var(--line); border-radius: 10px; background: var(--bg); }
+.dg rect { fill: var(--soft); stroke: var(--line); }
+.dg text { fill: var(--fg); font: 600 14px var(--sans); text-anchor: middle; }
+.dg text.s { fill: var(--mute); font-size: 12px; font-weight: 400; }
+.dg path { stroke: var(--mute); stroke-width: 1.5; fill: none; }
+.dg .ah { fill: var(--mute); }
 .hg { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
 .hg > div { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
 .hg .hk { display: block; margin-bottom: 6px; }
@@ -156,13 +215,15 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 </style>
 </head>
 <body>
-<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-python" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></symbol><symbol id="i-pytorch" viewBox="0 0 24 24"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></symbol><symbol id="i-onnx" viewBox="0 0 24 24"><path d="M23.0325 11.2963c-.0503 0-.1006 0-.1508.0126l-4.021-7.4387c.0754-.1383.1131-.289.1131-.4524 0-.5403-.4398-.9675-.9675-.9675-.2765 0-.5278.113-.7037.3015L9.286 1.156C9.2357.6785 8.821.3016 8.3184.3016c-.5277 0-.9675.4398-.9675.9675 0 .1634.0377.3141.113.4524l-6.245 8.9591c-.0753-.0251-.1633-.0377-.2513-.0377-.5403 0-.9675.4398-.9675.9676 0 .5403.4398.9675.9675.9675h.0377l3.3676 8.3309c-.0503.1257-.088.2639-.088.402 0 .5404.4398.9676.9676.9676.2764 0 .5277-.113.7036-.3015l10.1152.9926c.1005.4273.49.7288.9424.7288.5403 0 .9676-.4398.9676-.9675 0-.2388-.088-.465-.2262-.6283l5.1141-8.8712c.0503.0126.1005.0126.1634.0126.5403 0 .9675-.4398.9675-.9676 0-.5403-.4272-.98-.9675-.98zM17.2272 4.021c.1131.1508.2765.264.4524.3267l-1.533 11.5728c-.1005.0252-.1885.0503-.2764.1005L7.4513 8.708c.0251-.0754.0377-.1634.0377-.2514 0-.0628-.0126-.1256-.0126-.1884zm4.8754 8.5068l-5.177 3.556a1.105 1.105 0 0 0-.1256-.0753L18.3455 4.335h.0126l3.9456 7.288c-.1508.1759-.2388.3895-.2388.6408 0 .1005.0126.1885.0377.2638zM6.3832 7.5016c-.4649.0754-.8293.4775-.8293.955v.0628l-3.4555 2.0481 5.378-7.7026zm.3519 1.91c.1256-.0252.2513-.088.3518-.1634l8.356 7.2628c-.0377.113-.0628.2262-.0628.3518v.0503l-9.311 3.845c-.1382-.201-.3518-.3518-.6031-.402zm8.8963 8.1172c.1257.1382.3016.2513.5026.289l.465 4.046c-.201.1006-.3519.264-.4524.4524l-9.8136-.955zm1.1435.2136c.3267-.1633.5403-.49.5403-.867 0-.088-.0126-.1634-.0377-.2513l4.7372-3.2545-4.8 8.331zm.2513-14.3497l-9.889 4.31-.1131-.0755 1.2565-5.3906h.0377c.3393 0 .6409-.1759.8168-.4397l7.891 1.5706zM1.935 11.6105c0-.0629-.0126-.1257-.0126-.1885l3.9079-2.2995c.0754.0754.1633.1508.2638.201L4.8252 20.243l-3.2043-7.9036c.1885-.176.3142-.4398.3142-.7288Z"/></symbol><symbol id="i-nvidia" viewBox="0 0 24 24"><path d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></symbol><symbol id="i-docker" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></symbol><symbol id="i-mariadb" viewBox="0 0 24 24"><path d="M23.157 4.412c-.676.284-.79.31-1.673.372-.65.045-.757.057-1.212.209-.75.246-1.395.75-2.02 1.59-.296.398-1.249 1.913-1.249 1.988 0 .057-.65.998-.915 1.32-.574.713-1.08 1.079-2.14 1.59-.77.36-1.224.524-4.102 1.477-1.073.353-2.133.738-2.367.864-.852.449-1.515 1.036-2.203 1.938-1.003 1.32-.972 1.313-3.042.947a12.264 12.264 0 00-.675-.063c-.644-.05-1.023.044-1.332.334L0 17.193l.177.088c.094.05.353.234.561.398.215.17.461.347.55.391.088.044.17.088.183.101.012.013-.089.17-.228.353-.435.581-.593.871-.574 1.048.019.164.032.17.43.17.517-.006.826-.056 1.261-.208.65-.233 2.058-.94 2.784-1.4.776-.5 1.717-.998 1.956-1.042.082-.02.354-.07.594-.114.58-.107 1.464-.095 2.587.05.108.013.373.045.6.064.227.025.43.057.454.076.026.012.474.037.998.056.934.026 1.104.007 1.3-.189.126-.133.385-.631.498-.985.209-.643.417-.921.366-.492-.113.966-.322 1.692-.713 2.411-.259.499-.663 1.092-.934 1.395-.322.347-.315.36.088.315.619-.063 1.471-.397 2.096-.82.827-.562 1.647-1.691 2.19-3.03.107-.27.22-.22.183.083-.013.094-.038.315-.057.498l-.031.328.353-.202c.833-.48 1.414-1.262 2.127-2.884.227-.518.877-2.922 1.073-3.976a9.64 9.64 0 01.271-1.042c.127-.429.196-.555.48-.858.183-.19.625-.555.978-.808.72-.505.953-.75 1.187-1.205.208-.417.284-1.13.132-1.357-.132-.202-.284-.196-.763.006Z"/></symbol><symbol id="i-redis" viewBox="0 0 24 24"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></symbol><symbol id="i-minio" viewBox="0 0 24 24"><path d="M13.2072.006c-.6216-.0478-1.2.1943-1.6211.582a2.15 2.15 0 0 0-.0938 3.0352l3.4082 3.5507a3.042 3.042 0 0 1-.664 4.6875l-.463.2383V7.2853a15.4198 15.4198 0 0 0-8.0174 10.4862v.0176l6.5487-3.3281v7.621L13.7794 24V13.6817l.8965-.4629a4.4432 4.4432 0 0 0 1.2207-7.0292l-3.371-3.5254a.7489.7489 0 0 1 .037-1.0547.7522.7522 0 0 1 1.0567.0371l.4668.4863-.006.0059 4.0704 4.2441a.0566.0566 0 0 0 .082 0 .06.06 0 0 0 0-.0703l-3.1406-5.1425-.1484.1425.1484-.1445C14.4945.3926 13.8287.0538 13.2072.006Zm-.9024 9.8652v2.9941l-4.1523 2.1484a13.9787 13.9787 0 0 1 2.7676-3.9277 14.1784 14.1784 0 0 1 1.3847-1.2148z"/></symbol><symbol id="i-opencv" viewBox="0 0 24 24"><path d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></symbol><symbol id="i-plc" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2h3v3H7V8zm5 0h3v3h-3V8zm-5 5h3v3H7v-3zm5 0h3v3h-3v-3z"/></symbol></svg>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><symbol id="i-python" viewBox="0 0 24 24"><path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z"/></symbol><symbol id="i-pytorch" viewBox="0 0 24 24"><path d="M12.005 0L4.952 7.053a9.865 9.865 0 000 14.022 9.866 9.866 0 0014.022 0c3.984-3.9 3.986-10.205.085-14.023l-1.744 1.743c2.904 2.905 2.904 7.634 0 10.538s-7.634 2.904-10.538 0-2.904-7.634 0-10.538l4.647-4.646.582-.665zm3.568 3.899a1.327 1.327 0 00-1.327 1.327 1.327 1.327 0 001.327 1.328A1.327 1.327 0 0016.9 5.226 1.327 1.327 0 0015.573 3.9z"/></symbol><symbol id="i-onnx" viewBox="0 0 24 24"><path d="M23.0325 11.2963c-.0503 0-.1006 0-.1508.0126l-4.021-7.4387c.0754-.1383.1131-.289.1131-.4524 0-.5403-.4398-.9675-.9675-.9675-.2765 0-.5278.113-.7037.3015L9.286 1.156C9.2357.6785 8.821.3016 8.3184.3016c-.5277 0-.9675.4398-.9675.9675 0 .1634.0377.3141.113.4524l-6.245 8.9591c-.0753-.0251-.1633-.0377-.2513-.0377-.5403 0-.9675.4398-.9675.9676 0 .5403.4398.9675.9675.9675h.0377l3.3676 8.3309c-.0503.1257-.088.2639-.088.402 0 .5404.4398.9676.9676.9676.2764 0 .5277-.113.7036-.3015l10.1152.9926c.1005.4273.49.7288.9424.7288.5403 0 .9676-.4398.9676-.9675 0-.2388-.088-.465-.2262-.6283l5.1141-8.8712c.0503.0126.1005.0126.1634.0126.5403 0 .9675-.4398.9675-.9676 0-.5403-.4272-.98-.9675-.98zM17.2272 4.021c.1131.1508.2765.264.4524.3267l-1.533 11.5728c-.1005.0252-.1885.0503-.2764.1005L7.4513 8.708c.0251-.0754.0377-.1634.0377-.2514 0-.0628-.0126-.1256-.0126-.1884zm4.8754 8.5068l-5.177 3.556a1.105 1.105 0 0 0-.1256-.0753L18.3455 4.335h.0126l3.9456 7.288c-.1508.1759-.2388.3895-.2388.6408 0 .1005.0126.1885.0377.2638zM6.3832 7.5016c-.4649.0754-.8293.4775-.8293.955v.0628l-3.4555 2.0481 5.378-7.7026zm.3519 1.91c.1256-.0252.2513-.088.3518-.1634l8.356 7.2628c-.0377.113-.0628.2262-.0628.3518v.0503l-9.311 3.845c-.1382-.201-.3518-.3518-.6031-.402zm8.8963 8.1172c.1257.1382.3016.2513.5026.289l.465 4.046c-.201.1006-.3519.264-.4524.4524l-9.8136-.955zm1.1435.2136c.3267-.1633.5403-.49.5403-.867 0-.088-.0126-.1634-.0377-.2513l4.7372-3.2545-4.8 8.331zm.2513-14.3497l-9.889 4.31-.1131-.0755 1.2565-5.3906h.0377c.3393 0 .6409-.1759.8168-.4397l7.891 1.5706zM1.935 11.6105c0-.0629-.0126-.1257-.0126-.1885l3.9079-2.2995c.0754.0754.1633.1508.2638.201L4.8252 20.243l-3.2043-7.9036c.1885-.176.3142-.4398.3142-.7288Z"/></symbol><symbol id="i-nvidia" viewBox="0 0 24 24"><path d="M8.948 8.798v-1.43a6.7 6.7 0 0 1 .424-.018c3.922-.124 6.493 3.374 6.493 3.374s-2.774 3.851-5.75 3.851c-.398 0-.787-.062-1.158-.185v-4.346c1.528.185 1.837.857 2.747 2.385l2.04-1.714s-1.492-1.952-4-1.952a6.016 6.016 0 0 0-.796.035m0-4.735v2.138l.424-.027c5.45-.185 9.01 4.47 9.01 4.47s-4.08 4.964-8.33 4.964c-.37 0-.733-.035-1.095-.097v1.325c.3.035.61.062.91.062 3.957 0 6.82-2.023 9.593-4.408.459.371 2.34 1.263 2.73 1.652-2.633 2.208-8.772 3.984-12.253 3.984-.335 0-.653-.018-.971-.053v1.864H24V4.063zm0 10.326v1.131c-3.657-.654-4.673-4.46-4.673-4.46s1.758-1.944 4.673-2.262v1.237H8.94c-1.528-.186-2.73 1.245-2.73 1.245s.68 2.412 2.739 3.11M2.456 10.9s2.164-3.197 6.5-3.533V6.201C4.153 6.59 0 10.653 0 10.653s2.35 6.802 8.948 7.42v-1.237c-4.84-.6-6.492-5.936-6.492-5.936z"/></symbol><symbol id="i-docker" viewBox="0 0 24 24"><path d="M13.983 11.078h2.119a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.119a.185.185 0 00-.185.185v1.888c0 .102.083.185.185.185m-2.954-5.43h2.118a.186.186 0 00.186-.186V3.574a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m0 2.716h2.118a.187.187 0 00.186-.186V6.29a.186.186 0 00-.186-.185h-2.118a.185.185 0 00-.185.185v1.887c0 .102.082.185.185.186m-2.93 0h2.12a.186.186 0 00.184-.186V6.29a.185.185 0 00-.185-.185H8.1a.185.185 0 00-.185.185v1.887c0 .102.083.185.185.186m-2.964 0h2.119a.186.186 0 00.185-.186V6.29a.185.185 0 00-.185-.185H5.136a.186.186 0 00-.186.185v1.887c0 .102.084.185.186.186m5.893 2.715h2.118a.186.186 0 00.186-.185V9.006a.186.186 0 00-.186-.186h-2.118a.185.185 0 00-.185.185v1.888c0 .102.082.185.185.185m-2.93 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.083.185.185.185m-2.964 0h2.119a.185.185 0 00.185-.185V9.006a.185.185 0 00-.184-.186h-2.12a.186.186 0 00-.186.186v1.887c0 .102.084.185.186.185m-2.92 0h2.12a.185.185 0 00.184-.185V9.006a.185.185 0 00-.184-.186h-2.12a.185.185 0 00-.184.185v1.888c0 .102.082.185.185.185M23.763 9.89c-.065-.051-.672-.51-1.954-.51-.338.001-.676.03-1.01.087-.248-1.7-1.653-2.53-1.716-2.566l-.344-.199-.226.327c-.284.438-.49.922-.612 1.43-.23.97-.09 1.882.403 2.661-.595.332-1.55.413-1.744.42H.751a.751.751 0 00-.75.748 11.376 11.376 0 00.692 4.062c.545 1.428 1.355 2.48 2.41 3.124 1.18.723 3.1 1.137 5.275 1.137.983.003 1.963-.086 2.93-.266a12.248 12.248 0 003.823-1.389c.98-.567 1.86-1.288 2.61-2.136 1.252-1.418 1.998-2.997 2.553-4.4h.221c1.372 0 2.215-.549 2.68-1.009.309-.293.55-.65.707-1.046l.098-.288Z"/></symbol><symbol id="i-mariadb" viewBox="0 0 24 24"><path d="M23.157 4.412c-.676.284-.79.31-1.673.372-.65.045-.757.057-1.212.209-.75.246-1.395.75-2.02 1.59-.296.398-1.249 1.913-1.249 1.988 0 .057-.65.998-.915 1.32-.574.713-1.08 1.079-2.14 1.59-.77.36-1.224.524-4.102 1.477-1.073.353-2.133.738-2.367.864-.852.449-1.515 1.036-2.203 1.938-1.003 1.32-.972 1.313-3.042.947a12.264 12.264 0 00-.675-.063c-.644-.05-1.023.044-1.332.334L0 17.193l.177.088c.094.05.353.234.561.398.215.17.461.347.55.391.088.044.17.088.183.101.012.013-.089.17-.228.353-.435.581-.593.871-.574 1.048.019.164.032.17.43.17.517-.006.826-.056 1.261-.208.65-.233 2.058-.94 2.784-1.4.776-.5 1.717-.998 1.956-1.042.082-.02.354-.07.594-.114.58-.107 1.464-.095 2.587.05.108.013.373.045.6.064.227.025.43.057.454.076.026.012.474.037.998.056.934.026 1.104.007 1.3-.189.126-.133.385-.631.498-.985.209-.643.417-.921.366-.492-.113.966-.322 1.692-.713 2.411-.259.499-.663 1.092-.934 1.395-.322.347-.315.36.088.315.619-.063 1.471-.397 2.096-.82.827-.562 1.647-1.691 2.19-3.03.107-.27.22-.22.183.083-.013.094-.038.315-.057.498l-.031.328.353-.202c.833-.48 1.414-1.262 2.127-2.884.227-.518.877-2.922 1.073-3.976a9.64 9.64 0 01.271-1.042c.127-.429.196-.555.48-.858.183-.19.625-.555.978-.808.72-.505.953-.75 1.187-1.205.208-.417.284-1.13.132-1.357-.132-.202-.284-.196-.763.006Z"/></symbol><symbol id="i-redis" viewBox="0 0 24 24"><path d="M22.71 13.145c-1.66 2.092-3.452 4.483-7.038 4.483-3.203 0-4.397-2.825-4.48-5.12.701 1.484 2.073 2.685 4.214 2.63 4.117-.133 6.94-3.852 6.94-7.239 0-4.05-3.022-6.972-8.268-6.972-3.752 0-8.4 1.428-11.455 3.685C2.59 6.937 3.885 9.958 4.35 9.626c2.648-1.904 4.748-3.13 6.784-3.744C8.12 9.244.886 17.05 0 18.425c.1 1.261 1.66 4.648 2.424 4.648.232 0 .431-.133.664-.365a100.49 100.49 0 0 0 5.54-6.765c.222 3.104 1.748 6.898 6.014 6.898 3.819 0 7.604-2.756 9.33-8.965.2-.764-.73-1.361-1.261-.73zm-4.349-5.013c0 1.959-1.926 2.922-3.685 2.922-.941 0-1.664-.247-2.235-.568 1.051-1.592 2.092-3.225 3.21-4.973 1.972.334 2.71 1.43 2.71 2.619z"/></symbol><symbol id="i-minio" viewBox="0 0 24 24"><path d="M13.2072.006c-.6216-.0478-1.2.1943-1.6211.582a2.15 2.15 0 0 0-.0938 3.0352l3.4082 3.5507a3.042 3.042 0 0 1-.664 4.6875l-.463.2383V7.2853a15.4198 15.4198 0 0 0-8.0174 10.4862v.0176l6.5487-3.3281v7.621L13.7794 24V13.6817l.8965-.4629a4.4432 4.4432 0 0 0 1.2207-7.0292l-3.371-3.5254a.7489.7489 0 0 1 .037-1.0547.7522.7522 0 0 1 1.0567.0371l.4668.4863-.006.0059 4.0704 4.2441a.0566.0566 0 0 0 .082 0 .06.06 0 0 0 0-.0703l-3.1406-5.1425-.1484.1425.1484-.1445C14.4945.3926 13.8287.0538 13.2072.006Zm-.9024 9.8652v2.9941l-4.1523 2.1484a13.9787 13.9787 0 0 1 2.7676-3.9277 14.1784 14.1784 0 0 1 1.3847-1.2148z"/></symbol><symbol id="i-opencv" viewBox="0 0 24 24"><path d="M11.8992.8525C8.735.8525 6.17 3.4175 6.17 6.5817c0 2.102 1.1321 3.9398 2.8198 4.9366l1.6412-2.7849c.0411-.0699.0176-.1593-.0495-.2048-.6233-.4227-1.0328-1.137-1.0328-1.947 0-1.298 1.0524-2.3504 2.3505-2.3504 1.2981 0 2.3505 1.0524 2.3505 2.3505 0 .8098-.4095 1.5242-1.0328 1.947-.0671.0454-.0907.1348-.0495.2047l1.6414 2.785c1.6878-.9969 2.8199-2.8346 2.8199-4.9367 0-3.1642-2.5653-5.7292-5.7295-5.7292zm-6.17 10.8366C2.565 11.6891 0 14.2541 0 17.4183c0 3.1642 2.565 5.7292 5.7292 5.7292 3.1798 0 5.8074-2.6995 5.7275-5.8762H8.2313c-.0847 0-.1513.0717-.1519.1564-.0082 1.266-1.0644 2.3411-2.3502 2.3411-1.2981 0-2.3505-1.0524-2.3505-2.3505 0-1.2982 1.0524-2.3505 2.3505-2.3505.34 0 .663.0724.9547.2022.0713.0318.1566.0077.1962-.0595l1.6464-2.7935c-.8273-.4636-1.7815-.7279-2.7973-.7279zm15.4424.7614l-1.6366 2.7878c-.041.07-.0172.1594.05.2048.624.4217 1.0348 1.1354 1.0363 1.9452.0022 1.298-1.0483 2.352-2.3465 2.3542-1.298.0023-2.3523-1.0482-2.3545-2.3462-.0015-.8098.4068-1.5248 1.0294-1.9486.067-.0457.0905-.1353.0492-.2051l-1.6464-2.7818c-1.6859.9998-2.8146 2.8394-2.811 4.9415.0056 3.1641 2.575 5.7248 5.7393 5.7192 3.1641-.0054 5.7246-2.575 5.7192-5.7392-.0037-2.1022-1.139-3.938-2.8284-4.9318z"/></symbol><symbol id="i-camera" viewBox="0 0 24 24"><path d="M4 7h3l2-2h6l2 2h3a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2zm8 3a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/></symbol><symbol id="i-mail" viewBox="0 0 24 24"><path d="M2 5h20v14H2V5zm2 2v.4l8 5 8-5V7H4zm16 2.75l-8 5-8-5V17h16V9.75z"/></symbol><symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></symbol><symbol id="i-github" viewBox="0 0 24 24"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></symbol><symbol id="i-scholar" viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></symbol><symbol id="i-orcid" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.378c.525 0 .947.431.947.947s-.422.947-.947.947a.95.95 0 0 1-.947-.947c0-.525.422-.947.947-.947zm-.722 3.038h1.444v10.041H6.647V7.416zm3.562 0h3.9c3.712 0 5.344 2.653 5.344 5.025 0 2.578-2.016 5.025-5.325 5.025h-3.919V7.416zm1.444 1.303v7.444h2.297c3.272 0 4.022-2.484 4.022-3.722 0-2.016-1.284-3.722-4.097-3.722h-2.222z"/></symbol><symbol id="i-mv" viewBox="0 0 24 24"><path d="M2 7.5A1.5 1.5 0 0 1 3.5 6h10A1.5 1.5 0 0 1 15 7.5v9a1.5 1.5 0 0 1-1.5 1.5h-10A1.5 1.5 0 0 1 2 16.5v-9zM4 9v2h4V9H4zm12 0h2.5v6H16V9zm3.5-1.5H22v9h-2.5v-9zM6 18h5v2H6v-2z"/></symbol><symbol id="i-plc" viewBox="0 0 24 24"><path d="M3 4h18v16H3V4zm2 2v12h14V6H5zm2 2h3v3H7V8zm5 0h3v3h-3V8zm-5 5h3v3H7v-3zm5 0h3v3h-3v-3z"/></symbol></svg>
 <div class="top">
   <a class="brand" href="#about" data-ko="김한비" data-en="Hanbi Kim">Hanbi Kim</a>
   <nav class="tabs" aria-label="Sections">
     <a href="#about" data-t="about" data-ko="소개" data-en="About">About</a>
-    <a href="#gov" data-t="gov" data-ko="정부과제" data-en="Government R&amp;D">Government R&amp;D</a>
     <a href="#projects" data-t="projects" data-ko="프로젝트" data-en="Projects">Projects</a>
+    <a href="#gov" data-t="gov" data-ko="정부과제" data-en="Government R&amp;D">Government R&amp;D</a>
+    <a href="#research" data-t="research" data-ko="연구성과" data-en="Research">Research</a>
+    <a href="#field" data-t="field" data-ko="현장실무" data-en="Field Work">Field Work</a>
   </nav>
   <nav class="lang" aria-label="Language"><button type="button" data-l="en" aria-pressed="true">EN</button><button type="button" data-l="ko" aria-pressed="false">KO</button></nav>
 </div>
@@ -173,17 +234,16 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <img class="photo" src="photo.jpg" alt="김한비 사진" width="480" height="600">
     <div class="kicker">AI ENGINEER · COMPUTER VISION · ANOMALY DETECTION · REINFORCEMENT LEARNING</div>
     <h1>김한비 <span>Hanbi Kim</span></h1>
-    <p class="lead">제조 현장의 <em>컴퓨터비전 이상탐지</em>를 연구하고 현장에 설치합니다. 다겸 주식회사 AI팀을 처음부터 꾸려 반도체·2차전지 공정에 검사 솔루션을 납품했고, 연세대학교에서 박사과정을 밟고 있습니다.</p>
-    <div class="contact"><span>hanbikim8@gmail.com</span><span>github.com/Hanbi-Kim</span></div>
+    <p class="lead">기획자이자 연구자, 개발자이자 현장 엔지니어로 <em>제조 현장의 컴퓨터비전 이상탐지</em>를 만듭니다. 고객의 문제를 듣고 과제로 기획하고, 풀리지 않는 부분은 논문으로 연구하고, 그 결과를 검사 프로그램으로 개발해 반도체·2차전지 라인에 직접 설치합니다.</p>
+    <div class="contact"><a href="mailto:hanbikim8@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>hanbikim8@gmail.com</a><a href="https://www.linkedin.com/in/hanbi-kim8/" target="_blank" rel="noopener"><svg class="ic" style="color:#0A66C2"><use href="#i-linkedin"/></svg>LinkedIn</a><a href="https://github.com/Hanbi-Kim" target="_blank" rel="noopener"><svg class="ic gh"><use href="#i-github"/></svg>GitHub</a><a href="https://scholar.google.com/citations?user=hsVdxjYAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="ic" style="color:#4285F4"><use href="#i-scholar"/></svg>Google Scholar</a><a href="https://orcid.org/0009-0009-5512-7993" target="_blank" rel="noopener"><svg class="ic" style="color:#A6CE39"><use href="#i-orcid"/></svg>ORCID</a></div>
   </header>
 
   <section><h2>경력</h2><div class="rows">
     <div class="row"><div class="when">2022.08–현재</div><div class="what"><b>다겸 주식회사 · AI팀 팀장 (책임연구원)</b><ul class="dl">
-        <li><b>다겸아이킷(DagyeomEyekit)</b> — 컴퓨터비전 이상탐지 솔루션 개발: 라벨 없는 학습, 다중 클래스 이상탐지, 검사 서버·관제 화면</li>
-        <li><b>동박 라인 비전검사기</b> — 8K 라인스캔 결함 검출 알고리즘, PLC 연동, 2차전지 소재 국내·해외 양산 라인 납품</li>
-        <li><b>반도체 장비 비전 AI</b> — 웨이퍼 이송 이상탐지 모델 개발·장비 탑재, 반도체 특화 검사 파운데이션 모델</li>
-        <li><b>정부 R&amp;D 과제</b> — 사업계획서부터 발표·현장평가, 수행·사업비 관리, 결과보고 (AI바우처, AI로봇 실증, 스마트공장, 스마트서비스, 데이터바우처 등)</li>
-        <li><b>연구</b> — SCIE·KCI·국제학회 논문, 특허 발명</li>
+        <li><b>프로젝트</b> — AI팀을 처음부터 꾸려 이상탐지 솔루션 다겸아이킷의 알고리즘·추론 서버·관제 화면을 설계·개발하고, 고객 요구사항 분석부터 PoC·납품·검수까지 이끎. 2차전지 동박 라인 8K 라인스캔 검사기 국내·해외 양산 라인 납품 등 적용 사례 10건</li>
+        <li><b>정부과제</b> — 과제를 기획해 사업계획서를 쓰고 발표·현장평가에 대응했으며, 선정 뒤에는 수행·사업비 관리·결과보고까지 맡아 24개 과제 수행 (AI바우처, AI로봇 실증, 스마트공장, 데이터바우처 등)</li>
+        <li><b>연구성과</b> — 라벨 없는 학습, 여러 제품 통합 검사, 라인스캔 경계 결함처럼 현장에서 부딪힌 문제를 연구로 이어 논문 6편 (SCIE 2 · KCI 2 · 국제학회 1 · 심사 중 1), 특허 등록 5·출원 7</li>
+        <li><b>현장실무</b> — 고객 시료 테스트로 카메라·렌즈·조명 등 광학계를 선정해 현장에 달고, CCTV 영상과 센서·PLC 신호를 검사 프로그램에 붙이고, PLC 래더까지 직접 고쳐 검사 결과가 실제 라인을 멈추고 알람을 울리도록 연동</li>
       </ul></div></div>
   </div></section>
 
@@ -194,12 +254,12 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   </div></section>
 
   <section><h2>논문</h2><div class="rows">
-    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">심사 중</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><p>IEEE Access · 제2저자</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · 제1저자</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><p>Neural Computing and Applications 37</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">블러 처리된 얼굴 이미지에 대한 성별 및 나이 추정을 위한 엣지 어텐션 기반 잔차 신경망</a><span class="tag">KCI</span></b><p class="au"><strong>김한비</strong>, 고은정, 곽성현, 이지현, 이찬혁, 서원겸</p><p>지능정보연구 (Journal of Intelligence and Information Systems) 31(3) · 제1저자</p></div></div>
-    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">딥러닝 기반의 렌즈 이상 탐지 알고리즘 성능 비교 및 적용</a><span class="tag">KCI</span></b><p class="au"><strong>김한비</strong>, 서대호</p><p>한국산업경영시스템학회지 (Journal of Society of Korea Industrial and Systems Engineering) 47(1) · 제1저자</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">심사 중</span></b><p>IEEE Access · 제2저자</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p>IJIETAP 33(5) · 제2저자</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p>CVIPPR 2026 · 제1저자</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p>Neural Computing and Applications 37 · 제2저자</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">블러 처리된 얼굴 이미지에 대한 성별 및 나이 추정을 위한 엣지 어텐션 기반 잔차 신경망</a><span class="tag">KCI</span></b><p>지능정보연구 31(3) · 제1저자</p></div></div>
+    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">딥러닝 기반의 렌즈 이상 탐지 알고리즘 성능 비교 및 적용</a><span class="tag">KCI</span></b><p>한국산업경영시스템학회지 47(1) · 제1저자</p></div></div>
   </div></section>
 
   <section><h2>특허<small>등록 5 · 출원 7</small></h2><div class="rows">
@@ -240,7 +300,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2022.07</div><div class="what"><b>빅데이터분석기사</b><p>한국데이터산업진흥원</p></div></div>
     <div class="row"><div class="when">2022.03</div><div class="what"><b>데이터분석 준전문가 (ADsP)</b><p>한국데이터산업진흥원</p></div></div>
   </div></section>
-  <section><h2>기술</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div></section>
+  <section><h2>기술</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span><svg class="ic" style="color:#4F6D8F"><use href="#i-mv"/></svg>Machine Vision</span><span><svg class="ic" style="color:#3E8E5A"><use href="#i-plc"/></svg>PLC</span></div></section>
 
  </div>
 
@@ -338,7 +398,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
       <li>고객 요구사항 분석 → PoC → 납품·검수까지 프로젝트 리드, 정부과제 연계 기획</li>
     </ul></div>
     <div><div class="hk">실적</div><ul class="dl">
-      <li>반도체 장비·2차전지·정밀부품 등 적용 사례 10건 (반도체 6 · 배터리 2 · 정밀부품·소재 2), 2차전지 동박 제박 라인 비전검사기 국내·해외 양산 라인 납품 — 누적 매출 10억 원 이상</li>
+      <li>반도체 장비·2차전지·정밀부품 등 적용 사례 10건 (반도체 6 · 배터리 2 · 정밀부품·소재 2), 2차전지 동박 제박 라인 비전검사기 국내·해외 양산 라인 납품</li>
       <li>정부과제 5건에서 공인인증시험 신청·취득</li>
       <li>관련 논문 SCIE 1편·국제학회 1편, 특허 등록 5건·출원 7건</li>
       <li>2026 산업AI EXPO 라인스캔 검사 시연</li>
@@ -352,6 +412,221 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <article><div class="sl"><div class="sl-t"><img src="case_meat.jpg" alt="돼지고기 등급 분류 화면 — 검출 영역, 지방·살코기 분리, 측정값" width="1200" height="566" loading="lazy"><img src="case_meat_2.jpg" alt="날짜별 등급 분포와 샘플 목록 대시보드" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="이전 그림">‹</button><button type="button" class="sl-b" data-d="1" aria-label="다음 그림">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">식육 · 2025.11</div><b>돼지고기 등급 분류<span class="tag dim">자체 테스트</span></b><dl><dt>문제</dt><dd>지방·살코기 비율과 단면 크기로 매기는 등급을 자동으로 판정</dd><dt>방법</dt><dd>YOLO로 라인 위 고기 검출 → HSV로 지방·살코기 분리 → 카메라 픽셀 분해능으로 실제 폭·높이·면적 계산. FastAPI · Triton(ONNX) · MinIO · MariaDB · Redis, PLC 센서값 연동</dd><dt>결과</dt><dd>실시간 모니터링, 등급 분포 대시보드, 엑셀 내보내기, 라벨링 화면까지 갖춘 검사 프로그램 시연</dd></dl><div class="chips"><span>YOLO</span><span>HSV</span><span>Triton</span><span>Electron</span></div></div></article>
   </div></section>
  </div>
+ <div class="tab" data-t="field" hidden>
+  <section><h2>현장실무</h2><div class="fx">
+    <details class="fd"><summary class="fr"><img src="field_io_thumb.jpg" alt="" width="64" height="64" loading="lazy"><div><span class="hk">센서 · I/O</span><b>말굽센서 신호를 Modbus/TCP로 PC에서 읽기</b><p>PLC 없이 디지털 I/O 제어기 하나로 센서 ON/OFF를 네트워크로 받아 오기</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">Modbus/TCP 통신으로 센서 값을 PC에서 실시간으로 읽는 것이 목표다. 말굽센서 신호를 솔내시스템 디지털 I/O 제어기로 받아 이더넷으로 PC에 넘긴다.</p>
+   <h3>1. 준비물</h3>
+   <figure><img src="field_io_parts.jpg" alt="말굽센서, SMPS, 디지털 I/O 제어기" width="1282" height="480" loading="lazy"><figcaption>말굽센서 · SMPS(전원) · 디지털 I/O(솔내시스템 CIE-H12G)</figcaption></figure>
+   <h3>2. 연결 방법</h3>
+   <figure><svg class="dg" viewBox="0 0 680 222" role="img" aria-label="말굽센서 갈색·청색은 SMPS +V·0V, 흑색 출력은 디지털 I/O DI1, SMPS +V는 I/O COM, 디지털 I/O와 PC는 이더넷"><rect x="4" y="80" width="120" height="80" rx="8"/><text x="64" y="116">말굽센서</text><text class="s" x="64" y="136">Autonics BUP</text><rect x="200" y="10" width="120" height="78" rx="8"/><text x="260" y="44">SMPS</text><text class="s" x="260" y="80">DC 전원</text><text class="s" x="208" y="38" style="text-anchor:start">+V</text><text class="s" x="208" y="68" style="text-anchor:start">0V</text><text class="s" x="312" y="38" style="text-anchor:end">+V</text><rect x="400" y="110" width="130" height="90" rx="8"/><text x="465" y="152">디지털 I/O</text><text class="s" x="465" y="170">CIE-H12G</text><text class="s" x="408" y="136" style="text-anchor:start">COM</text><text class="s" x="408" y="192" style="text-anchor:start">DI1</text><rect x="590" y="120" width="86" height="70" rx="8"/><text x="633" y="152">PC</text><text class="s" x="633" y="172">pymodbus</text><path d="M124 96H160V34H200" style="stroke:#9A5B34;stroke-width:2.5"/><path d="M124 120H176V64H200" style="stroke:#2F6FB0;stroke-width:2.5"/><path d="M320 34H360V132H400" style="stroke:#C0392B;stroke-width:2.5"/><path d="M124 144H372V188H400" style="stroke:var(--fg);stroke-width:2.5"/><path d="M530 155H590" style="stroke:#E08A2E;stroke-width:2.5"/><text class="s" x="130" y="91" style="text-anchor:start">갈색</text><text class="s" x="130" y="115" style="text-anchor:start">청색</text><text class="s" x="182" y="139" style="text-anchor:start">흑색 · 출력</text><text class="s" x="366" y="96" style="text-anchor:start">+V → COM</text><text class="s" x="560" y="147">Ethernet</text><text class="s" x="465" y="216">192.168.0.100</text><text class="s" x="633" y="214">192.168.0.10</text></svg><figcaption>센서 전원은 SMPS에서, 센서 출력(흑색)은 디지털 I/O DI1로, 디지털 I/O와 PC는 이더넷으로 연결</figcaption></figure>
+   <h3>3. ezManager 설정</h3>
+   <ol>
+    <li>솔내시스템 설정 프로그램 ezManager를 설치한다.</li>
+    <li>네트워크를 고정 IP로 맞춘다. PC 192.168.0.10, 디지털 I/O 192.168.0.100.</li>
+    <li>[전체 검색]으로 MAC 주소로 제품을 찾고, [도구 → Modbus/TCP] 통신 체크로 연결을 확인한다. 센서를 가리면 DI1이 켜진다.</li>
+   </ol>
+   <div class="f2"><figure><img src="field_io_ezm.jpg" alt="ezManager 네트워크 설정 화면" width="1000" height="660" loading="lazy"><figcaption>고정 IP 설정</figcaption></figure><figure><img src="field_io_onoff.jpg" alt="Modbus/TCP 통신 체크 – 센서 OFF, ON" width="514" height="640" loading="lazy"><figcaption>센서 OFF · ON</figcaption></figure></div>
+   <h3>4. Python으로 읽기 (Modbus/TCP)</h3>
+   <p>pymodbus로 디지털 입력(FC02) DI1을 100 ms마다 읽고, 값이 바뀔 때만 출력한다.</p>
+   <pre><code>from pymodbus.client import ModbusTcpClient
+import time
+
+HOST, PORT = "192.168.0.100", 502   # 장치 IP, Modbus/TCP 기본 포트
+DI_BASE, CH = 0, 1                  # 디지털 입력 시작 주소, 채널
+ADDR = DI_BASE + CH
+INTERVAL = 0.1                      # 폴링 주기 100 ms
+
+c = ModbusTcpClient(HOST, port=PORT, timeout=2)
+if not c.connect():
+    raise SystemExit("TCP connect 실패")
+
+last = None
+while True:
+    r = c.read_discrete_inputs(address=ADDR, count=1)   # FC02
+    v = None if r.isError() else bool(r.bits[0])
+    if v is not None and v != last:                     # 값이 바뀔 때만 출력
+        print(f"DI1 = {int(v)}")
+        last = v
+    time.sleep(INTERVAL)</code></pre>
+   <figure class="sm"><img src="field_io_run.jpg" alt="실행 결과 DI1 = 0, 1, 0" width="394" height="94" loading="lazy"><figcaption>실행 결과: 말굽센서 OFF = 0, ON = 1</figcaption></figure>
+   <h3>5. HTTP로 읽고 쓰기</h3>
+   <p>브라우저에서 192.168.0.100에 들어가면 장치 상태 페이지가 나온다. 입력이 켜지면 아이콘 이미지가 y_off.png에서 y_on.png로 바뀌어서, 페이지를 받아 이미지 이름으로 ON/OFF를 판단할 수 있다. 출력(DO)은 URL 파라미터로 켜고 끈다.</p>
+   <figure><img src="field_io_http.jpg" alt="장치 웹 페이지 – DI1 꺼짐과 켜짐" width="1400" height="324" loading="lazy"><figcaption>장치 웹 페이지: DI1 OFF(왼쪽) · ON(오른쪽)</figcaption></figure>
+   <pre><code>import requests, time
+
+BASE = "http://192.168.0.100"
+HDRS = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+
+# 읽기: DI1 아이콘이 y_on 이면 ON
+html = requests.get(f"{BASE}/index.html?t={int(time.time())}", headers=HDRS, timeout=2).text
+i = html.find('id="input_02_btn"')
+di1 = "y_on" in html[i:i + 300]
+
+# 쓰기: DO0 켜기 / 끄기
+requests.get(f"{BASE}/index.html?o0=1&t={int(time.time())}", headers=HDRS, timeout=2)
+requests.get(f"{BASE}/index.html?o0=0&t={int(time.time())}", headers=HDRS, timeout=2)</code></pre>
+   <h3>6. 결론</h3>
+   <ul>
+    <li><b>장점</b> — 센서가 많지 않으면 PLC 구성 없이 비교적 간편하게 적용할 수 있다.</li>
+    <li><b>단점</b> — 통신 속도가 비교적 느려서, 빠른 속도로 실시간 적용하는 데는 활용하기 어려워 보인다.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg><use href="#i-camera"/></svg></span><div><span class="hk">영상 수집 · RTSP</span><b>CCTV 영상을 RTSP로 PC에서 실시간 수집</b><p>현장 CCTV·NVR 스트림을 받아 끊겨도 다시 붙는 수집 프로그램 만들기</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">현장에 이미 달려 있는 CCTV나 NVR 영상을 RTSP로 받아, PC에서 실시간 프레임을 뽑아 검사 프로그램에 넘기는 것이 목표다. 카메라를 새로 사지 않고 기존 장비를 그대로 쓸 수 있다.</p>
+   <h3>1. 구성</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="CCTV·NVR에서 RTSP로 PC 수집 프로그램, 다시 검사·저장으로"><rect x="4" y="20" width="150" height="58" rx="8"/><text x="79" y="45">CCTV · NVR</text><text class="s" x="79" y="64">H.264 / H.265</text><path d="M156 49h46"/><polygon class="ah" points="204,49 196,45 196,53"/><text class="s" x="180" y="38">RTSP</text><rect x="205" y="20" width="150" height="58" rx="8"/><text x="280" y="45">PC 수집</text><text class="s" x="280" y="64">OpenCV + FFmpeg</text><path d="M357 49h46"/><polygon class="ah" points="405,49 397,45 397,53"/><text class="s" x="381" y="38">프레임</text><rect x="406" y="20" width="150" height="58" rx="8"/><text x="481" y="45">검사 · 저장</text><text class="s" x="481" y="64">AI 추론 · 녹화</text></svg><figcaption>카메라·NVR과 PC는 같은 네트워크에 두고, RTSP 기본 포트는 554</figcaption></figure>
+   <h3>2. RTSP 주소 확인</h3>
+   <ol>
+    <li>주소는 <code>rtsp://계정:비밀번호@IP:554/경로</code> 꼴이다. 경로는 제조사와 모델마다 다르고, NVR은 채널마다 경로가 따로 있다.</li>
+    <li>코드를 짜기 전에 VLC [미디어 → 네트워크 스트림 열기]로 주소가 맞는지 먼저 본다. VLC에서 안 나오면 코드 문제가 아니다.</li>
+    <li>카메라는 보통 고화질 메인 스트림과 저화질 서브 스트림을 같이 낸다. 검사용 해상도와 PC 부하를 보고 고른다.</li>
+   </ol>
+   <h3>3. Python으로 받기</h3>
+   <p>OpenCV는 FFmpeg로 RTSP를 연다. UDP는 패킷이 빠지면 화면이 깨지므로 TCP로 받게 하고, 읽기는 따로 스레드를 돌려 늘 최신 프레임만 들고 있게 했다. 스트림이 끊기면 잠시 뒤 다시 연결한다.</p>
+   <pre><code>import os, threading, time
+os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp"   # TCP로 받기
+import cv2
+
+URL = "rtsp://user:pass@192.168.0.64:554/..."   # 2단계에서 확인한 주소
+
+class Stream:
+    def __init__(self, url):
+        self.url, self.frame = url, None
+        threading.Thread(target=self._run, daemon=True).start()
+
+    def _run(self):
+        while True:
+            cap = cv2.VideoCapture(self.url, cv2.CAP_FFMPEG)
+            while cap.isOpened():
+                ok, f = cap.read()
+                if not ok:
+                    break
+                self.frame = f          # 늘 최신 프레임만 보관
+            cap.release()
+            self.frame = None
+            time.sleep(2)               # 끊기면 2초 뒤 다시 연결
+
+s = Stream(URL)
+while True:
+    if s.frame is not None:
+        cv2.imshow("cctv", s.frame)     # 여기서 검사 프로그램에 넘긴다
+    if cv2.waitKey(30) == 27:
+        break</code></pre>
+   <h3>4. 연결이 안 될 때 확인 순서</h3>
+   <ol>
+    <li><b>네트워크</b> — PC에서 카메라 IP로 ping이 가는지, 554 포트가 열려 있는지.</li>
+    <li><b>RTSP 사용 설정</b> — 카메라·NVR 웹 설정에서 RTSP가 꺼져 있거나 포트가 바뀐 경우가 있다.</li>
+    <li><b>계정</b> — 비밀번호의 특수문자는 URL 인코딩해야 하고, 계정에 스트림 권한이 있어야 한다.</li>
+    <li><b>코덱 · 해상도</b> — H.265나 너무 큰 해상도는 디코딩이 밀린다. 장비 설정에서 해상도를 낮추거나 서브 스트림을 쓴다.</li>
+   </ol>
+   <h3>5. 정리</h3>
+   <ul>
+    <li><b>장점</b> — 제조사가 달라도 RTSP 표준만 지원하면 같은 코드로 붙일 수 있고, 기존 CCTV를 검사용 카메라로 다시 쓸 수 있다.</li>
+    <li><b>한계</b> — 네트워크 영상이라 지연이 수백 ms 생길 수 있어, 정확한 타이밍에 찍어야 하는 검사에는 머신비전 카메라가 맞다.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg><use href="#i-plc"/></svg></span><div><span class="hk">PLC · 광학</span><b>래더 수정과 포토메트릭 촬영 구성</b><p>포토센서·인버터를 제어하는 LS PLC 래더를 고치고, 조명과 머신비전 카메라를 맞물려 촬영</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">컨베이어 위 제품이 포토센서를 지나면 멈추고, 조명 방향을 바꿔 가며 여러 장을 찍은 뒤 다시 보내는 촬영 구성이다. 기존 LS PLC 래더에 촬영 단계를 끼워 넣고, 조명과 카메라는 PC에서 제어했다.</p>
+   <h3>1. 동작 순서</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="포토센서 감지, 인버터 정지, 조명 전환·촬영, 인버터 재가동 순서"><rect x="4" y="20" width="122" height="58" rx="8"/><text x="65" y="45">포토센서</text><text class="s" x="65" y="64">제품 감지</text><path d="M128 49h16"/><polygon class="ah" points="148,49 140,45 140,53"/><rect x="149" y="20" width="122" height="58" rx="8"/><text x="210" y="45">인버터 정지</text><text class="s" x="210" y="64">PLC 래더</text><path d="M273 49h16"/><polygon class="ah" points="293,49 285,45 285,53"/><rect x="294" y="20" width="122" height="58" rx="8"/><text x="355" y="45">조명 · 촬영</text><text class="s" x="355" y="64">PC</text><path d="M418 49h16"/><polygon class="ah" points="438,49 430,45 430,53"/><rect x="439" y="20" width="117" height="58" rx="8"/><text x="497" y="45">재가동</text><text class="s" x="497" y="64">완료 신호</text></svg><figcaption>PLC는 컨베이어를 멈추고 기다리고, PC는 촬영이 끝나면 완료 신호를 돌려준다</figcaption></figure>
+   <h3>2. 래더 수정 (XG5000)</h3>
+   <p>기존 로직은 건드리지 않고 촬영 단계만 덧붙였다. 고치기 전에 PLC 프로그램을 먼저 읽어 와 백업한다.</p>
+   <ol>
+    <li><b>감지</b> — 포토센서 입력(P)의 상승 엣지로 촬영 요청 비트(M)를 SET 하고, 인버터 운전 출력을 끈다.</li>
+    <li><b>안정 대기</b> — 인버터가 멈춘 뒤 타이머(TON)로 잠깐 기다려 흔들림이 가라앉으면 PC에 촬영 시작 신호를 낸다.</li>
+    <li><b>재가동</b> — PC의 촬영 완료 신호가 들어오면 촬영 요청 비트를 RESET 하고 인버터를 다시 돌린다.</li>
+    <li><b>안전</b> — 완료 신호가 정해진 시간 안에 안 오면 알람을 띄우고 멈춘 채로 둔다. 비상정지 같은 기존 인터록은 그대로 둔다.</li>
+   </ol>
+   <pre><code>P0010(포토센서) ──┤P├──────────────────(S) M0100   촬영 요청
+M0100 ────────────────────────────────(R) P0040   인버터 운전 끄기
+M0100 ──┤ ├── P0041(운전중) ──┤/├─────[TON T0010 0.3s]   흔들림 대기
+T0010 ────────────────────────────────( ) P0042   촬영 시작 → PC
+P0011(촬영 완료 ← PC) ──┤P├────────────(R) M0100
+                                  └───(S) P0040   인버터 다시 운전</code></pre>
+   <h3>3. 조명과 카메라 제어 (PC)</h3>
+   <p>카메라는 그대로 두고 사각조명의 방향 채널을 하나씩 켜서 찍는다. 조명을 바꾼 뒤에는 밝기가 안정될 때까지 잠깐 기다린다.</p>
+   <pre><code>def capture_set():
+    imgs = []
+    for ch in (1, 2, 3, 4):        # 위 · 오른쪽 · 아래 · 왼쪽
+        light.only(ch)             # 한 방향 조명만 켜기
+        time.sleep(0.05)           # 밝기 안정
+        imgs.append(cam.grab())    # 머신비전 카메라 촬영
+    light.off()
+    plc.done()                     # 촬영 완료 신호 → PLC
+    return imgs</code></pre>
+   <h3>4. 포토메트릭 스테레오</h3>
+   <p>같은 자리에서 빛 방향만 바꿔 찍으면, 화소마다 밝기 차이로 표면이 기운 방향(법선)을 구할 수 있다. 색이나 무늬에 묻히는 찍힘·긁힘 같은 요철이 잘 드러난다.</p>
+   <pre><code>import numpy as np
+# L: 조명 방향 (4×3), I: 화소별 밝기 (4×N)
+G = np.linalg.lstsq(L, I, rcond=None)[0]       # I = L · G
+albedo = np.linalg.norm(G, axis=0)             # 반사율
+normal = G / (albedo + 1e-8)                   # 표면 법선 (3×N)</code></pre>
+   <h3>5. 정리</h3>
+   <ul>
+    <li><b>배운 점</b> — 비전 검사는 카메라만의 문제가 아니라, 라인을 멈추고 다시 돌리는 PLC 로직과 촬영 타이밍을 같이 맞춰야 한다.</li>
+    <li><b>주의</b> — 남의 래더를 고칠 때는 백업과 기존 인터록 유지가 먼저고, 촬영 시간만큼 라인 속도가 줄어드는지 미리 계산한다.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg viewBox="0 0 24 24"><path d="M2 12h3l2-6 3 12 3-9 2 5 2-2h5v2h-4l-3 3-1.6-4-3.1 9.3L7.6 9.9 6.4 14H2z"/></svg></span><div><span class="hk">설비 센서</span><b>진동센서 Modbus 통신 연동</b><p>RS-485 진동센서 값을 Modbus RTU로 PC에서 주기적으로 읽어 저장하기</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">설비에 붙인 진동센서 값을 Modbus로 PC에서 주기적으로 읽어 시간과 함께 저장하는 것이 목표다. 쌓인 데이터는 설비 이상 징후를 보는 예지보전 데이터로 쓴다.</p>
+   <h3>1. 구성</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="진동센서에서 RS-485로 USB 변환기, USB로 PC"><rect x="4" y="20" width="150" height="58" rx="8"/><text x="79" y="45">진동센서</text><text class="s" x="79" y="64">Modbus RTU</text><path d="M156 49h46"/><polygon class="ah" points="204,49 196,45 196,53"/><text class="s" x="180" y="38">RS-485</text><rect x="205" y="20" width="150" height="58" rx="8"/><text x="280" y="45">USB 변환기</text><text class="s" x="280" y="64">RS-485 ↔ USB</text><path d="M357 49h46"/><polygon class="ah" points="405,49 397,45 397,53"/><text class="s" x="381" y="38">USB</text><rect x="406" y="20" width="150" height="58" rx="8"/><text x="481" y="45">PC</text><text class="s" x="481" y="64">pymodbus · CSV</text></svg><figcaption>센서 전원은 별도 DC 전원, 통신선은 A(+) · B(−) 두 가닥</figcaption></figure>
+   <h3>2. 배선과 통신 설정</h3>
+   <ol>
+    <li>센서의 A · B를 변환기의 A · B에 맞춰 꽂는다. 바뀌면 응답이 아예 없다. 선이 길면 끝단에 종단저항을 단다.</li>
+    <li>센서 매뉴얼에서 슬레이브 ID, 통신 속도(예: 9600 bps, 8N1), 레지스터 맵을 확인한다. 센서마다 진동 속도 RMS, 가속도, 온도가 들어 있는 주소와 배율이 다르다.</li>
+    <li>Modbus 테스트 프로그램으로 한 레지스터를 먼저 읽어 보고, 응답이 오면 코드로 옮긴다.</li>
+   </ol>
+   <h3>3. Python으로 읽기</h3>
+   <p>pymodbus 시리얼 클라이언트로 Holding Register(FC03)를 읽는다. 레지스터 값은 정수라서 매뉴얼의 배율로 나눠 실제 값으로 바꾼다.</p>
+   <pre><code>from pymodbus.client import ModbusSerialClient
+import csv, time
+from datetime import datetime
+
+c = ModbusSerialClient(port="COM3", baudrate=9600, bytesize=8, parity="N", stopbits=1, timeout=1)
+c.connect()
+
+UNIT = 1            # 슬레이브 ID
+ADDR, N = 0, 3      # 시작 주소, 개수 (주소·배율은 센서 매뉴얼 값으로)
+
+with open("vibration.csv", "a", newline="") as f:
+    w = csv.writer(f)
+    while True:
+        r = c.read_holding_registers(address=ADDR, count=N, slave=UNIT)   # FC03
+        if not r.isError():
+            vel, acc, temp = r.registers
+            w.writerow([datetime.now().isoformat(timespec="seconds"),
+                        vel / 100, acc / 100, temp / 10])   # mm/s, g, °C
+            f.flush()
+        time.sleep(1)       # 1초마다</code></pre>
+   <h3>4. 현장에서 챙길 것</h3>
+   <ul>
+    <li><b>여러 대</b> — RS-485 한 줄에 여러 센서를 이어 달 수 있지만, 슬레이브 ID가 겹치면 안 된다.</li>
+    <li><b>폴링 간격</b> — 센서 수 × 응답 시간보다 짧게 잡으면 응답이 밀린다.</li>
+    <li><b>노이즈</b> — 인버터·모터 전원선과 통신선을 떨어뜨리고 차폐선을 쓴다.</li>
+   </ul>
+   <h3>5. 정리</h3>
+   <ul>
+    <li><b>장점</b> — 산업용 센서 대부분이 Modbus를 지원해서, 장비가 달라도 주소와 배율만 바꾸면 같은 코드로 모을 수 있다.</li>
+    <li><b>한계</b> — 센서가 계산해 둔 RMS 같은 요약값을 읽는 방식이라, 주파수 분석(FFT)까지 하려면 원 파형을 빠르게 뽑을 수 있는 센서가 필요하다.</li>
+   </ul>
+    </div></details>
+  </div></section>
+ </div>
+ <div class="tab" data-t="research" hidden>
+  <section><h2>연구성과<small>논문 6편</small></h2>
+  <h3 class="pg">SCIE / International Conference</h3><div class="pp">
+    <article class="pa"><figure><img src="res_cvippr.jpg" alt="증강 뷰로 국소 불변 영역을 만들고 세 단계 관계로 학습하는 프레임워크" width="1200" height="900" loading="lazy"><figcaption>전체 구조: 증강 뷰 → 국소 불변 영역 → 세 단계 관계 학습</figcaption></figure><div class="pb"><div class="hk">2026 · CVIPPR 2026 · 국제학회 · 제1저자</div><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><dl><dt>문제</dt><dd>공장에는 제품 종류가 여럿인데, 라벨 없이 모델 하나로 모두 검사하면 정상끼리도 차이가 커서 특징 공간이 뒤섞임</dd><dt>방법</dt><dd>고정한 DINOv2 특징에 학습형 어댑터를 붙이고, 증강 뷰로 샘플마다 국소 불변 영역을 정한 뒤 이웃을 세 단계로 학습 — 같은 샘플은 강하게 당기고, 경계 이웃은 약하게, 먼 샘플은 강하게 밀어냄</dd><dt>결과</dt><dd>MVTec-AD 통합 다중 클래스 설정에서 비교 모델 중 이미지 AUROC·픽셀 F1 최고, DINOv2 기본 모델보다 픽셀 F1 크게 향상</dd></dl><div class="chips"><span>DINOv2</span><span>Contrastive Learning</span><span>Multi-class AD</span></div></div></article>
+    <article class="pa"><figure><img src="poster.jpg" alt="라인스캔 검사 시스템 화면" width="960" height="506" loading="lazy"><figcaption>대상 시스템: 8K 라인스캔 검사 화면</figcaption></figure><div class="pb"><div class="hk">2026 · IEEE ACCESS · 제2저자</div><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">심사 중</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><dl><dt>문제</dt><dd>넓은 제품을 8K 라인스캔 카메라 5대로 나눠 찍으면, 결함 하나가 카메라·ROI 경계에 걸려 여러 개로 쪼개지거나 겹쳐 잡힘</dd><dt>방법</dt><dd>카메라별로 나온 이상 후보를 경계를 고려해 하나의 결함으로 묶는 ROI 기반 이상탐지</dd></dl><div class="chips"><span>Line-scan</span><span>Multi-camera</span><span>Anomaly Detection</span></div></div></article>
+    <article class="pa"><figure><img src="res_coupon.jpg" alt="페이지 클릭 시퀀스와 고객 정적 정보를 합쳐 체류·구매 확률을 예측하는 모델 구조" width="763" height="498" loading="lazy"><figcaption>모델 구조: 클릭 시퀀스 + 고객 정보 → 체류·구매 확률</figcaption></figure><div class="pb"><div class="hk">2026 · IJIETAP 33(5) · SCIE · 제2저자</div><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><dl><dt>문제</dt><dd>수백만 명의 쇼핑몰 고객 중 이탈 위험이 큰 고객을 골라 알맞은 카테고리·할인율의 쿠폰을 주는 일은 사람이 할 수 없음</dd><dt>방법</dt><dd>실시간 페이지 클릭 시퀀스(LSTM + 어텐션)와 고객 정적 정보를 함께 써서 체류·구매 확률을 예측하고, 보조 목표 변수로 클래스 불균형을 줄임</dd><dt>결과</dt><dd>여러 비교 실험에서 제안 구조가 가장 좋았고, 실제 쇼핑몰 데이터로 수익 개선 효과를 확인</dd></dl><div class="chips"><span>LSTM</span><span>Attention</span><span>Recommendation</span></div></div></article>
+    <article class="pa"><figure><img src="res_nca.jpg" alt="고정 교사, 학습형 교사, 학생 모델과 동적 손실 가중 구조" width="1200" height="614" loading="lazy"><figcaption>전체 구조: 교사 2개 + 학생 1개, 동적 손실 가중</figcaption></figure><div class="pb"><div class="hk">2025 · NEURAL COMPUTING AND APPLICATIONS 37 · SCIE · 제2저자</div><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><dl><dt>문제</dt><dd>제조 데이터는 불량 샘플이 드물고, 대규모 데이터로 사전학습한 모델만으로는 산업 이미지 특징을 다 담지 못함</dd><dt>방법</dt><dd>고정 교사(PDN)와 학습형 교사(오토인코더)가 함께 학생 모델을 가르치는 구조. 동적 손실 가중으로 두 교사의 비중을 학습 중 자동 조정하고, soft-hard feature loss로 오차가 큰 미세 결함 영역에 집중</dd><dt>결과</dt><dd>베이스라인보다 MVTec AD AUPRO 최대 0.6%p, VisA AU-ROC 최대 0.4%p 향상. 실험적 튜닝 없이 여러 데이터셋에 적용 가능</dd></dl><div class="chips"><span>Knowledge Distillation</span><span>EfficientAD</span><span>MVTec · VisA</span></div></div></article>
+  </div>
+  <h3 class="pg">KCI / Korean Conference</h3><div class="pp">
+    <article class="pa"><figure><img src="res_blur.jpg" alt="엣지 맵을 Residual Block 안의 어텐션으로 쓰는 Edge Attention Module 구조" width="1200" height="544" loading="lazy"><figcaption>모델 구조: Residual Block + Edge Attention Module</figcaption></figure><div class="pb"><div class="hk">2025 · 지능정보연구 31(3) · KCI · 제1저자</div><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">블러 처리된 얼굴 이미지에 대한 성별 및 나이 추정을 위한 엣지 어텐션 기반 잔차 신경망</a></b><p class="au"><strong>김한비</strong>, 고은정, 곽성현, 이지현, 이찬혁, 서원겸</p><dl><dt>문제</dt><dd>병원·공공 CCTV처럼 개인정보 보호를 위해 얼굴을 일부러 흐리게(비식별화) 처리한 영상에서는, 사전학습 얼굴 모델도 성별·나이를 거의 못 맞힘. 블러를 복원하지 않고 흐린 그대로에서 속성을 예측하는 문제</dd><dt>방법</dt><dd>UTKFace 24,108장을 SSIM 0.80 미만이 되도록 가우시안 블러로 비식별화. ResNet18의 Residual Block 사이에 캐니 엣지 맵을 곱하는 Edge Attention Module을 넣고, 학습이 진행될수록 엣지 임계값을 낮춰 미세한 엣지를 점진적으로 더함</dd><dt>결과</dt><dd>블러 이미지에서 성별 정확도 0.80·F1 0.82, 나이 MAE 10.03·R² 0.44로 비교 모델 중 가장 좋음 (VGGFace 블러: 0.58·0.64, MAE 15.50)</dd></dl><div class="chips"><span>De-identification</span><span>Canny Edge</span><span>ResNet18</span><span>UTKFace</span></div></div></article>
+    <article class="pa"><figure><img src="res_lens.jpg" alt="이물질이 든 렌즈 이미지, 예측 히트맵, 비정상 판정" width="1200" height="408" loading="lazy"><figcaption>EfficientAD 결과: 원본 · 히트맵 · 판정 (이물질)</figcaption></figure><div class="pb"><div class="hk">2024 · 한국산업경영시스템학회지 47(1) · KCI · 제1저자</div><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">딥러닝 기반의 렌즈 이상 탐지 알고리즘 성능 비교 및 적용</a></b><p class="au"><strong>김한비</strong>, 서대호</p><dl><dt>문제</dt><dd>액체 속 투명 콘택트렌즈는 불량 데이터를 모으기 어렵고, 이물질·렌즈 누락·여러 장 겹침 같은 불량을 미리 다 정의하기도 어려움</dd><dt>방법</dt><dd>정상 데이터만으로 학습하는 비지도 이상탐지 알고리즘(PaDiM, FastFlow, CFlow, EfficientAD 등)을 MVTec AD로 검증한 뒤 렌즈 데이터에 적용해 비교</dd><dt>결과</dt><dd>EfficientAD가 이미지 단위 AUROC·F1 0.97에 추론 속도도 가장 빨라 실시간 검사에 적합. 픽셀 단위 F1은 0.18로 결함 위치를 짚는 데는 한계</dd></dl><div class="chips"><span>EfficientAD</span><span>PaDiM</span><span>Unsupervised AD</span></div></div></article>
+  </div></section>
+ </div>
 </div>
 
 <div class="in" id="en" lang="en">
@@ -360,17 +635,16 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <img class="photo" src="photo.jpg" alt="Photo of Hanbi Kim" width="480" height="600">
     <div class="kicker">AI ENGINEER · COMPUTER VISION · ANOMALY DETECTION · REINFORCEMENT LEARNING</div>
     <h1>Hanbi Kim <span>김한비</span></h1>
-    <p class="lead">I study <em>computer vision anomaly detection</em> and deploy it on the factory floor. I built the AI team at Dagyeom from the ground up, delivering inspection solutions to semiconductor and secondary-battery production lines, and I am pursuing a Ph.D. at Yonsei University.</p>
-    <div class="contact"><span>hanbikim8@gmail.com</span><span>github.com/Hanbi-Kim</span></div>
+    <p class="lead">As a planner, researcher, developer and field engineer, I build <em>computer vision anomaly detection for manufacturing</em>. I turn customer problems into projects, research what can't yet be solved and publish it, develop the results into inspection software, and install it on semiconductor and secondary-battery lines myself.</p>
+    <div class="contact"><a href="mailto:hanbikim8@gmail.com"><svg class="ic"><use href="#i-mail"/></svg>hanbikim8@gmail.com</a><a href="https://www.linkedin.com/in/hanbi-kim8/" target="_blank" rel="noopener"><svg class="ic" style="color:#0A66C2"><use href="#i-linkedin"/></svg>LinkedIn</a><a href="https://github.com/Hanbi-Kim" target="_blank" rel="noopener"><svg class="ic gh"><use href="#i-github"/></svg>GitHub</a><a href="https://scholar.google.com/citations?user=hsVdxjYAAAAJ&amp;hl=en" target="_blank" rel="noopener"><svg class="ic" style="color:#4285F4"><use href="#i-scholar"/></svg>Google Scholar</a><a href="https://orcid.org/0009-0009-5512-7993" target="_blank" rel="noopener"><svg class="ic" style="color:#A6CE39"><use href="#i-orcid"/></svg>ORCID</a></div>
   </header>
 
   <section><h2>Experience</h2><div class="rows">
     <div class="row"><div class="when">2022.08–Present</div><div class="what"><b>Dagyeom Co., Ltd. · AI Team Lead (Principal Researcher)</b><ul class="dl">
-        <li><b>DagyeomEyekit</b> — computer vision anomaly detection solution: label-free training, multi-class anomaly detection, inspection server and monitoring dashboard</li>
-        <li><b>Copper-foil line inspection</b> — 8K line-scan defect detection algorithms, PLC integration, delivered to battery-material mass-production lines in Korea and overseas</li>
-        <li><b>Vision AI for semiconductor equipment</b> — wafer-transfer anomaly detection models deployed on equipment; semiconductor-specific inspection foundation model</li>
-        <li><b>Government R&amp;D</b> — proposal writing, presentations and on-site evaluations, project execution, budget management and final reporting (AI Voucher, AI Robot Demonstration, Smart Factory, SME Smart Service, Data Voucher and more)</li>
-        <li><b>Research</b> — SCIE, KCI and international conference papers; patent inventions</li>
+        <li><b>Projects</b> — built the AI team from scratch and designed the algorithms, inference server and dashboard of the DagyeomEyekit anomaly detection solution; led projects from requirements and PoC to delivery and acceptance. 10 deployments including 8K line-scan copper-foil inspection on battery-material lines in Korea and overseas</li>
+        <li><b>Government R&amp;D</b> — planned projects, wrote proposals and handled presentations and on-site evaluations, then ran execution, budget management and final reporting — 24 projects in total (AI Voucher, AI Robot Demonstration, Smart Factory, Data Voucher and more)</li>
+        <li><b>Research</b> — turned problems met on site, such as label-free training, unified multi-product inspection and line-scan boundary defects, into 6 papers (SCIE 2 · KCI 2 · conference 1 · under review 1) and patents (5 granted · 7 pending)</li>
+        <li><b>Field work</b> — select optics (camera, lens and lighting) by testing customer samples and mount them on site, wire CCTV video and sensor and PLC signals into the inspection software, and edit PLC ladder logic myself so that inspection results actually stop the line and trigger alarms</li>
       </ul></div></div>
   </div></section>
 
@@ -381,12 +655,12 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
   </div></section>
 
   <section><h2>Publications</h2><div class="rows">
-    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">Under review</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><p>IEEE Access · Second author</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><p>International Journal of Industrial Engineering: Theory, Applications and Practice 33(5)</p></div></div>
-    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><p>2026 4th Asia Conference on Computer Vision, Image Processing and Pattern Recognition (CVIPPR 2026) · First author</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><p>Neural Computing and Applications 37</p></div></div>
-    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">Edge Attention-Based Residual Network for Gender and Age Estimation on Blurred Face Images</a><span class="tag">KCI</span></b><p class="au"><strong>Hanbi Kim</strong> et al.</p><p>Journal of Intelligence and Information Systems 31(3) · First author</p></div></div>
-    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">Performance Comparison and Application of Deep Learning-Based Lens Anomaly Detection Algorithms</a><span class="tag">KCI</span></b><p class="au"><strong>Hanbi Kim</strong>, Daeho Seo</p><p>Journal of Society of Korea Industrial and Systems Engineering 47(1) · First author</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">Under review</span></b><p>IEEE Access · Second author</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a><span class="tag">SCIE</span></b><p>IJIETAP 33(5) · Second author</p></div></div>
+    <div class="row"><div class="when">2026</div><div class="what"><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p>CVIPPR 2026 · First author</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a><span class="tag">SCIE</span></b><p>Neural Computing and Applications 37 · Second author</p></div></div>
+    <div class="row"><div class="when">2025</div><div class="what"><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">Edge Attention-Based Residual Network for Gender and Age Estimation on Blurred Face Images</a><span class="tag">KCI</span></b><p>Journal of Intelligence and Information Systems 31(3) · First author</p></div></div>
+    <div class="row"><div class="when">2024</div><div class="what"><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">Performance Comparison and Application of Deep Learning-Based Lens Anomaly Detection Algorithms</a><span class="tag">KCI</span></b><p>Journal of Society of Korea Industrial and Systems Engineering 47(1) · First author</p></div></div>
   </div></section>
 
   <section><h2>Patents<small>5 granted · 7 pending</small></h2><div class="rows">
@@ -427,7 +701,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <div class="row"><div class="when">2022.07</div><div class="what"><b>Engineer Big Data Analysis</b><p>Korea Data Agency</p></div></div>
     <div class="row"><div class="when">2022.03</div><div class="what"><b>Advanced Data Analytics Semi-Professional (ADsP)</b><p>Korea Data Agency</p></div></div>
   </div></section>
-  <section><h2>Skills</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span>GigE Vision</span><span>Camera Link</span><span>PLC</span></div></section>
+  <section><h2>Skills</h2><div class="chips logo"><span><svg class="ic" style="color:#3776AB"><use href="#i-python"/></svg>Python</span><span><svg class="ic" style="color:#EE4C2C"><use href="#i-pytorch"/></svg>PyTorch</span><span><svg class="ic" style="color:#005CED"><use href="#i-onnx"/></svg>ONNX</span><span><svg class="ic" style="color:#76B900"><use href="#i-nvidia"/></svg>Triton Inference Server</span><span><svg class="ic" style="color:#2496ED"><use href="#i-docker"/></svg>Docker</span><span><svg class="ic mdb"><use href="#i-mariadb"/></svg>MariaDB</span><span><svg class="ic" style="color:#FF4438"><use href="#i-redis"/></svg>Redis</span><span><svg class="ic" style="color:#C72E49"><use href="#i-minio"/></svg>MinIO</span><span><svg class="ic" style="color:#4F6D8F"><use href="#i-mv"/></svg>Machine Vision</span><span><svg class="ic" style="color:#3E8E5A"><use href="#i-plc"/></svg>PLC</span></div></section>
 
  </div>
 
@@ -525,7 +799,7 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
       <li>Project lead from requirements and PoC to delivery and acceptance; planning linked government R&amp;D projects</li>
     </ul></div>
     <div><div class="hk">TRACK RECORD</div><ul class="dl">
-      <li>10 deployments across semiconductor equipment, batteries and precision parts (6 semiconductor · 2 battery · 2 precision parts/materials), including copper-foil line inspection delivered to domestic and overseas mass-production lines — over KRW 1B in cumulative revenue</li>
+      <li>10 deployments across semiconductor equipment, batteries and precision parts (6 semiconductor · 2 battery · 2 precision parts/materials), including copper-foil line inspection delivered to domestic and overseas mass-production lines</li>
       <li>Applied for and obtained certification testing in 5 government-funded projects</li>
       <li>1 SCIE journal paper and 1 international conference paper; 5 patents granted, 7 pending</li>
       <li>Line-scan inspection demo at 2026 Industrial AI EXPO</li>
@@ -539,13 +813,228 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
     <article><div class="sl"><div class="sl-t"><img src="case_meat.jpg" alt="Pork grading screen — detected region, fat/lean separation and measurements" width="1200" height="566" loading="lazy"><img src="case_meat_2.jpg" alt="Dashboard with daily grade distribution and samples" width="1200" height="600" loading="lazy"></div><button type="button" class="sl-b" data-d="-1" aria-label="Previous image">‹</button><button type="button" class="sl-b" data-d="1" aria-label="Next image">›</button><div class="sl-d"></div></div><div class="cb"><div class="hk">Meat processing · 2025.11</div><b>Pork Grade Classification<span class="tag dim">In-house test</span></b><dl><dt>Problem</dt><dd>Automating grades based on fat/lean ratio and cut size</dd><dt>Approach</dt><dd>YOLO detection on the line → HSV fat/lean separation → real width, height and area from camera pixel resolution; FastAPI, Triton (ONNX), MinIO, MariaDB, Redis and PLC sensor data</dd><dt>Result</dt><dd>Inspection program demo with live monitoring, grade-distribution dashboard, Excel export and labeling screen</dd></dl><div class="chips"><span>YOLO</span><span>HSV</span><span>Triton</span><span>Electron</span></div></div></article>
   </div></section>
  </div>
+ <div class="tab" data-t="field" hidden>
+  <section><h2>Field Work</h2><div class="fx">
+    <details class="fd"><summary class="fr"><img src="field_io_thumb.jpg" alt="" width="64" height="64" loading="lazy"><div><span class="hk">Sensors · I/O</span><b>Reading a Fork Sensor on a PC over Modbus/TCP</b><p>Getting sensor ON/OFF over the network with a single digital I/O controller, no PLC</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">The goal is to read sensor values on a PC in real time over Modbus/TCP. A Sollae Systems digital I/O controller takes the fork sensor signal and passes it to the PC over Ethernet.</p>
+   <h3>1. Parts</h3>
+   <figure><img src="field_io_parts.jpg" alt="Fork sensor, SMPS and digital I/O controller" width="1282" height="480" loading="lazy"><figcaption>Fork sensor · SMPS (power) · digital I/O (Sollae Systems CIE-H12G)</figcaption></figure>
+   <h3>2. Wiring</h3>
+   <figure><svg class="dg" viewBox="0 0 680 222" role="img" aria-label="Fork sensor brown and blue to SMPS +V and 0V, black output to digital I/O DI1, SMPS +V to I/O COM, digital I/O to PC over Ethernet"><rect x="4" y="80" width="120" height="80" rx="8"/><text x="64" y="116">Fork sensor</text><text class="s" x="64" y="136">Autonics BUP</text><rect x="200" y="10" width="120" height="78" rx="8"/><text x="260" y="44">SMPS</text><text class="s" x="260" y="80">DC power</text><text class="s" x="208" y="38" style="text-anchor:start">+V</text><text class="s" x="208" y="68" style="text-anchor:start">0V</text><text class="s" x="312" y="38" style="text-anchor:end">+V</text><rect x="400" y="110" width="130" height="90" rx="8"/><text x="465" y="152">Digital I/O</text><text class="s" x="465" y="170">CIE-H12G</text><text class="s" x="408" y="136" style="text-anchor:start">COM</text><text class="s" x="408" y="192" style="text-anchor:start">DI1</text><rect x="590" y="120" width="86" height="70" rx="8"/><text x="633" y="152">PC</text><text class="s" x="633" y="172">pymodbus</text><path d="M124 96H160V34H200" style="stroke:#9A5B34;stroke-width:2.5"/><path d="M124 120H176V64H200" style="stroke:#2F6FB0;stroke-width:2.5"/><path d="M320 34H360V132H400" style="stroke:#C0392B;stroke-width:2.5"/><path d="M124 144H372V188H400" style="stroke:var(--fg);stroke-width:2.5"/><path d="M530 155H590" style="stroke:#E08A2E;stroke-width:2.5"/><text class="s" x="130" y="91" style="text-anchor:start">Brown</text><text class="s" x="130" y="115" style="text-anchor:start">Blue</text><text class="s" x="182" y="139" style="text-anchor:start">Black · output</text><text class="s" x="366" y="96" style="text-anchor:start">+V → COM</text><text class="s" x="560" y="147">Ethernet</text><text class="s" x="465" y="216">192.168.0.100</text><text class="s" x="633" y="214">192.168.0.10</text></svg><figcaption>The sensor is powered by the SMPS, its output (black) goes to DI1 on the digital I/O, and the digital I/O connects to the PC over Ethernet</figcaption></figure>
+   <h3>3. ezManager setup</h3>
+   <ol>
+    <li>Install ezManager, Sollae Systems' configuration tool.</li>
+    <li>Use static IPs: PC 192.168.0.10, digital I/O 192.168.0.100.</li>
+    <li>Find the device by MAC address with [Search All], then check the connection with [Tools → Modbus/TCP]. DI1 lights up when the sensor is blocked.</li>
+   </ol>
+   <div class="f2"><figure><img src="field_io_ezm.jpg" alt="ezManager network settings" width="1000" height="660" loading="lazy"><figcaption>Static IP settings</figcaption></figure><figure><img src="field_io_onoff.jpg" alt="Modbus/TCP check – sensor OFF and ON" width="514" height="640" loading="lazy"><figcaption>Sensor OFF · ON</figcaption></figure></div>
+   <h3>4. Reading in Python (Modbus/TCP)</h3>
+   <p>pymodbus reads discrete input (FC02) DI1 every 100 ms and prints only when the value changes.</p>
+   <pre><code>from pymodbus.client import ModbusTcpClient
+import time
+
+HOST, PORT = "192.168.0.100", 502   # device IP, default Modbus/TCP port
+DI_BASE, CH = 0, 1                  # discrete input base address, channel
+ADDR = DI_BASE + CH
+INTERVAL = 0.1                      # poll every 100 ms
+
+c = ModbusTcpClient(HOST, port=PORT, timeout=2)
+if not c.connect():
+    raise SystemExit("TCP connect failed")
+
+last = None
+while True:
+    r = c.read_discrete_inputs(address=ADDR, count=1)   # FC02
+    v = None if r.isError() else bool(r.bits[0])
+    if v is not None and v != last:                     # print only on change
+        print(f"DI1 = {int(v)}")
+        last = v
+    time.sleep(INTERVAL)</code></pre>
+   <figure class="sm"><img src="field_io_run.jpg" alt="Output DI1 = 0, 1, 0" width="394" height="94" loading="lazy"><figcaption>Output: fork sensor OFF = 0, ON = 1</figcaption></figure>
+   <h3>5. Reading and writing over HTTP</h3>
+   <p>Opening 192.168.0.100 in a browser shows the device status page. When an input turns on, its icon changes from y_off.png to y_on.png, so ON/OFF can be read from the image name in the page. Outputs (DO) are switched with a URL parameter.</p>
+   <figure><img src="field_io_http.jpg" alt="Device web page – DI1 off and on" width="1400" height="324" loading="lazy"><figcaption>Device web page: DI1 OFF (left) · ON (right)</figcaption></figure>
+   <pre><code>import requests, time
+
+BASE = "http://192.168.0.100"
+HDRS = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+
+# read: DI1 is ON if its icon is y_on
+html = requests.get(f"{BASE}/index.html?t={int(time.time())}", headers=HDRS, timeout=2).text
+i = html.find('id="input_02_btn"')
+di1 = "y_on" in html[i:i + 300]
+
+# write: DO0 on / off
+requests.get(f"{BASE}/index.html?o0=1&t={int(time.time())}", headers=HDRS, timeout=2)
+requests.get(f"{BASE}/index.html?o0=0&t={int(time.time())}", headers=HDRS, timeout=2)</code></pre>
+   <h3>6. Conclusion</h3>
+   <ul>
+    <li><b>Pros</b> — With only a few sensors, it can be applied fairly easily without building a PLC setup.</li>
+    <li><b>Cons</b> — Communication is relatively slow, so it looks hard to use where fast real-time response is needed.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg><use href="#i-camera"/></svg></span><div><span class="hk">Video · RTSP</span><b>Real-time CCTV Capture over RTSP</b><p>Pulling on-site CCTV and NVR streams into a PC capture program that reconnects on its own</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">The goal is to take video from CCTV cameras or NVRs already installed on site, receive it over RTSP, and hand real-time frames to an inspection program on a PC. No new cameras are needed; existing equipment is reused as is.</p>
+   <h3>1. Setup</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="CCTV/NVR to PC capture over RTSP, then to inspection and storage"><rect x="4" y="20" width="150" height="58" rx="8"/><text x="79" y="45">CCTV · NVR</text><text class="s" x="79" y="64">H.264 / H.265</text><path d="M156 49h46"/><polygon class="ah" points="204,49 196,45 196,53"/><text class="s" x="180" y="38">RTSP</text><rect x="205" y="20" width="150" height="58" rx="8"/><text x="280" y="45">PC capture</text><text class="s" x="280" y="64">OpenCV + FFmpeg</text><path d="M357 49h46"/><polygon class="ah" points="405,49 397,45 397,53"/><text class="s" x="381" y="38">frames</text><rect x="406" y="20" width="150" height="58" rx="8"/><text x="481" y="45">Inspect · store</text><text class="s" x="481" y="64">AI · recording</text></svg><figcaption>Cameras/NVR and the PC sit on the same network; the default RTSP port is 554</figcaption></figure>
+   <h3>2. Finding the RTSP URL</h3>
+   <ol>
+    <li>The URL looks like <code>rtsp://user:password@IP:554/path</code>. The path differs by vendor and model, and an NVR has a separate path per channel.</li>
+    <li>Before writing code, open the URL in VLC (Media → Open Network Stream). If VLC can't play it, the problem isn't the code.</li>
+    <li>Cameras usually serve a high-res main stream and a low-res sub stream. Pick one based on the resolution the inspection needs and the PC load.</li>
+   </ol>
+   <h3>3. Receiving in Python</h3>
+   <p>OpenCV opens RTSP through FFmpeg. UDP corrupts the image when packets drop, so the stream is forced to TCP, and reading runs in its own thread so the program always holds only the latest frame. If the stream drops, it reconnects after a short wait.</p>
+   <pre><code>import os, threading, time
+os.environ["OPENCV_FFMPEG_CAPTURE_OPTIONS"] = "rtsp_transport;tcp"   # receive over TCP
+import cv2
+
+URL = "rtsp://user:pass@192.168.0.64:554/..."   # URL checked in step 2
+
+class Stream:
+    def __init__(self, url):
+        self.url, self.frame = url, None
+        threading.Thread(target=self._run, daemon=True).start()
+
+    def _run(self):
+        while True:
+            cap = cv2.VideoCapture(self.url, cv2.CAP_FFMPEG)
+            while cap.isOpened():
+                ok, f = cap.read()
+                if not ok:
+                    break
+                self.frame = f          # keep only the latest frame
+            cap.release()
+            self.frame = None
+            time.sleep(2)               # reconnect after 2 s
+
+s = Stream(URL)
+while True:
+    if s.frame is not None:
+        cv2.imshow("cctv", s.frame)     # hand off to the inspection program here
+    if cv2.waitKey(30) == 27:
+        break</code></pre>
+   <h3>4. When it won't connect</h3>
+   <ol>
+    <li><b>Network</b> — Can the PC ping the camera, and is port 554 open?</li>
+    <li><b>RTSP enabled</b> — RTSP may be turned off, or its port changed, in the camera/NVR web settings.</li>
+    <li><b>Account</b> — Special characters in the password must be URL-encoded, and the account needs streaming rights.</li>
+    <li><b>Codec · resolution</b> — H.265 or very high resolutions can fall behind in decoding. Lower the resolution on the device or use the sub stream.</li>
+   </ol>
+   <h3>5. Takeaways</h3>
+   <ul>
+    <li><b>Pros</b> — Any vendor that supports the RTSP standard works with the same code, and existing CCTV can be reused as inspection cameras.</li>
+    <li><b>Limits</b> — Network video can lag by a few hundred ms, so inspections that need precisely timed shots call for a machine-vision camera.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg><use href="#i-plc"/></svg></span><div><span class="hk">PLC · Optics</span><b>Ladder Logic and Photometric Imaging</b><p>Modified LS PLC ladder logic for a photo sensor and inverter, and synced lighting with a machine-vision camera</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">A product on the conveyor stops when it passes a photo sensor, gets photographed several times under changing light directions, then moves on. Imaging steps were added to the existing LS PLC ladder, and the PC controlled the lights and camera.</p>
+   <h3>1. Sequence</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="Photo sensor detect, inverter stop, light switching and capture, restart"><rect x="4" y="20" width="122" height="58" rx="8"/><text x="65" y="45">Photo sensor</text><text class="s" x="65" y="64">detect</text><path d="M128 49h16"/><polygon class="ah" points="148,49 140,45 140,53"/><rect x="149" y="20" width="122" height="58" rx="8"/><text x="210" y="45">Stop inverter</text><text class="s" x="210" y="64">PLC ladder</text><path d="M273 49h16"/><polygon class="ah" points="293,49 285,45 285,53"/><rect x="294" y="20" width="122" height="58" rx="8"/><text x="355" y="45">Light · capture</text><text class="s" x="355" y="64">PC</text><path d="M418 49h16"/><polygon class="ah" points="438,49 430,45 430,53"/><rect x="439" y="20" width="117" height="58" rx="8"/><text x="497" y="45">Restart</text><text class="s" x="497" y="64">done signal</text></svg><figcaption>The PLC stops the conveyor and waits; the PC returns a done signal after capture</figcaption></figure>
+   <h3>2. Ladder changes (XG5000)</h3>
+   <p>The existing logic was left alone and only the imaging steps were added. Read the PLC program and back it up before changing anything.</p>
+   <ol>
+    <li><b>Detect</b> — The rising edge of the photo sensor input (P) SETs a capture-request bit (M) and turns off the inverter run output.</li>
+    <li><b>Settle</b> — After the inverter stops, a timer (TON) waits briefly for vibration to settle, then signals the PC to start capturing.</li>
+    <li><b>Restart</b> — When the PC's capture-done signal arrives, the request bit is RESET and the inverter runs again.</li>
+    <li><b>Safety</b> — If the done signal doesn't arrive in time, raise an alarm and stay stopped. Existing interlocks such as the E-stop stay untouched.</li>
+   </ol>
+   <pre><code>P0010(photo sensor) ──┤P├──────────────(S) M0100   capture request
+M0100 ────────────────────────────────(R) P0040   inverter run off
+M0100 ──┤ ├── P0041(running) ──┤/├────[TON T0010 0.3s]   settle
+T0010 ────────────────────────────────( ) P0042   start capture → PC
+P0011(capture done ← PC) ──┤P├─────────(R) M0100
+                                  └───(S) P0040   inverter run on</code></pre>
+   <h3>3. Light and camera control (PC)</h3>
+   <p>The camera stays fixed while each direction channel of the square light is turned on in turn. After switching lights, wait briefly for the brightness to settle.</p>
+   <pre><code>def capture_set():
+    imgs = []
+    for ch in (1, 2, 3, 4):        # top · right · bottom · left
+        light.only(ch)             # one light direction on
+        time.sleep(0.05)           # let brightness settle
+        imgs.append(cam.grab())    # machine-vision capture
+    light.off()
+    plc.done()                     # capture done → PLC
+    return imgs</code></pre>
+   <h3>4. Photometric stereo</h3>
+   <p>Shooting from the same spot while only the light direction changes lets you recover each pixel's surface orientation (normal) from brightness differences. Dents and scratches hidden by color or pattern stand out.</p>
+   <pre><code>import numpy as np
+# L: light directions (4×3), I: per-pixel brightness (4×N)
+G = np.linalg.lstsq(L, I, rcond=None)[0]       # I = L · G
+albedo = np.linalg.norm(G, axis=0)             # reflectance
+normal = G / (albedo + 1e-8)                   # surface normals (3×N)</code></pre>
+   <h3>5. Takeaways</h3>
+   <ul>
+    <li><b>Lesson</b> — Vision inspection isn't just about the camera; the PLC logic that stops and restarts the line has to be timed together with the capture.</li>
+    <li><b>Caution</b> — When editing someone else's ladder, back up first and keep existing interlocks, and check in advance how much the capture time slows the line.</li>
+   </ul>
+    </div></details>
+    <details class="fd"><summary class="fr"><span class="th"><svg viewBox="0 0 24 24"><path d="M2 12h3l2-6 3 12 3-9 2 5 2-2h5v2h-4l-3 3-1.6-4-3.1 9.3L7.6 9.9 6.4 14H2z"/></svg></span><div><span class="hk">Equipment sensors</span><b>Vibration Sensor over Modbus</b><p>Polling an RS-485 vibration sensor over Modbus RTU and logging readings on a PC</p></div><span class="go" aria-hidden="true">›</span></summary><div class="fa">
+   <p class="ld">The goal is to read a vibration sensor mounted on equipment over Modbus at regular intervals and store the values with timestamps. The collected data serves predictive maintenance by showing early signs of equipment trouble.</p>
+   <h3>1. Setup</h3>
+   <figure><svg class="dg" viewBox="0 0 560 96" role="img" aria-label="Vibration sensor to USB converter over RS-485, then to PC over USB"><rect x="4" y="20" width="150" height="58" rx="8"/><text x="79" y="45">Vibration sensor</text><text class="s" x="79" y="64">Modbus RTU</text><path d="M156 49h46"/><polygon class="ah" points="204,49 196,45 196,53"/><text class="s" x="180" y="38">RS-485</text><rect x="205" y="20" width="150" height="58" rx="8"/><text x="280" y="45">USB converter</text><text class="s" x="280" y="64">RS-485 ↔ USB</text><path d="M357 49h46"/><polygon class="ah" points="405,49 397,45 397,53"/><text class="s" x="381" y="38">USB</text><rect x="406" y="20" width="150" height="58" rx="8"/><text x="481" y="45">PC</text><text class="s" x="481" y="64">pymodbus · CSV</text></svg><figcaption>The sensor runs on a separate DC supply; the bus is two wires, A(+) and B(−)</figcaption></figure>
+   <h3>2. Wiring and settings</h3>
+   <ol>
+    <li>Connect the sensor's A and B to the converter's A and B. If they're swapped, there's no response at all. On long runs, add a termination resistor at the end.</li>
+    <li>Check the sensor manual for the slave ID, baud rate (e.g. 9600 bps, 8N1) and register map. Each sensor puts velocity RMS, acceleration and temperature at different addresses with different scales.</li>
+    <li>Read a single register with a Modbus test tool first; once it answers, move to code.</li>
+   </ol>
+   <h3>3. Reading in Python</h3>
+   <p>A pymodbus serial client reads holding registers (FC03). Register values are integers, so they're divided by the scale from the manual to get real values.</p>
+   <pre><code>from pymodbus.client import ModbusSerialClient
+import csv, time
+from datetime import datetime
+
+c = ModbusSerialClient(port="COM3", baudrate=9600, bytesize=8, parity="N", stopbits=1, timeout=1)
+c.connect()
+
+UNIT = 1            # slave ID
+ADDR, N = 0, 3      # start address, count (use the sensor manual's addresses and scales)
+
+with open("vibration.csv", "a", newline="") as f:
+    w = csv.writer(f)
+    while True:
+        r = c.read_holding_registers(address=ADDR, count=N, slave=UNIT)   # FC03
+        if not r.isError():
+            vel, acc, temp = r.registers
+            w.writerow([datetime.now().isoformat(timespec="seconds"),
+                        vel / 100, acc / 100, temp / 10])   # mm/s, g, °C
+            f.flush()
+        time.sleep(1)       # every second</code></pre>
+   <h3>4. On-site checklist</h3>
+   <ul>
+    <li><b>Multiple sensors</b> — Several sensors can share one RS-485 line, but slave IDs must not overlap.</li>
+    <li><b>Polling interval</b> — Shorter than (sensors × response time) and responses pile up.</li>
+    <li><b>Noise</b> — Keep the bus away from inverter and motor power cables, and use shielded cable.</li>
+   </ul>
+   <h3>5. Takeaways</h3>
+   <ul>
+    <li><b>Pros</b> — Most industrial sensors speak Modbus, so different devices can be collected with the same code by changing only addresses and scales.</li>
+    <li><b>Limits</b> — This reads summary values like RMS that the sensor computes; frequency analysis (FFT) needs a sensor that can stream raw waveforms quickly.</li>
+   </ul>
+    </div></details>
+  </div></section>
+ </div>
+ <div class="tab" data-t="research" hidden>
+  <section><h2>Research<small>6 papers</small></h2>
+  <h3 class="pg">SCIE / International Conference</h3><div class="pp">
+    <article class="pa"><figure><img src="res_cvippr.jpg" alt="Framework building local invariant regions from augmented views and learning tri-level relations" width="1200" height="900" loading="lazy"><figcaption>Framework: augmented views → local invariant region → tri-level relations</figcaption></figure><div class="pb"><div class="hk">2026 · CVIPPR 2026 · CONFERENCE · FIRST AUTHOR</div><b><a class="lk" href="https://ieeexplore.ieee.org/abstract/document/11604494" target="_blank" rel="noopener">Relation-Aware Representation Learning for Label-Free Unified Multi-Class Anomaly Detection</a></b><p class="au"><strong>Hanbi Kim</strong>, Jeongwoo Heo, Jongmin Kim, Jaewon Lee, Wongyeom Seo</p><dl><dt>Problem</dt><dd>Factories make many product types; inspecting them all with one label-free model mixes up the feature space because normal samples vary widely</dd><dt>Method</dt><dd>A trainable adapter on frozen DINOv2 features; augmented views define a local invariant region per sample, and neighbors are learned at three levels — strong pull for the same sample, soft push for boundary neighbors, hard push for distant ones</dd><dt>Result</dt><dd>Best image-level AUROC and pixel-level F1 among baselines on unified multi-class MVTec-AD, with a large pixel F1 gain over the DINOv2 baseline</dd></dl><div class="chips"><span>DINOv2</span><span>Contrastive Learning</span><span>Multi-class AD</span></div></div></article>
+    <article class="pa"><figure><img src="poster.jpg" alt="Line-scan inspection system screen" width="960" height="506" loading="lazy"><figcaption>Target system: 8K line-scan inspection screen</figcaption></figure><div class="pb"><div class="hk">2026 · IEEE ACCESS · SECOND AUTHOR</div><b>Boundary-Aware Defect Association for ROI-Based Anomaly Detection in a Five-Camera 8K Line-Scan Inspection System<span class="tag dim">Under review</span></b><p class="au">Hajin Kim, <strong>Hanbi Kim</strong>, Wongyeom Seo</p><dl><dt>Problem</dt><dd>When five 8K line-scan cameras split a wide product, one defect crossing a camera or ROI boundary gets split into pieces or detected twice</dd><dt>Method</dt><dd>ROI-based anomaly detection that merges per-camera anomaly candidates into single defects with boundary awareness</dd></dl><div class="chips"><span>Line-scan</span><span>Multi-camera</span><span>Anomaly Detection</span></div></div></article>
+    <article class="pa"><figure><img src="res_coupon.jpg" alt="Model combining page-click sequences and static customer features to predict stay and purchase probability" width="763" height="498" loading="lazy"><figcaption>Model: click sequence + customer features → stay and purchase probability</figcaption></figure><div class="pb"><div class="hk">2026 · IJIETAP 33(5) · SCIE · SECOND AUTHOR</div><b><a class="lk" href="https://doi.org/10.23055/ijietap.2026.33.5.11803" target="_blank" rel="noopener">A Hybrid Deep Recommendation System for Issuing Digital Coupons in Real-Time</a></b><p class="au">Wongyeom Seo, <strong>Hanbi Kim</strong>, Hajin Kim, Geonseok Lee</p><dl><dt>Problem</dt><dd>Picking at-risk customers among millions of shoppers and giving each the right coupon category and discount can't be done by hand</dd><dt>Method</dt><dd>Real-time page-click sequences (LSTM + attention) combined with static customer features predict stay and purchase probability; auxiliary targets ease class imbalance</dd><dt>Result</dt><dd>Best in ablation comparisons, with revenue gains confirmed on real shopping-mall data</dd></dl><div class="chips"><span>LSTM</span><span>Attention</span><span>Recommendation</span></div></div></article>
+    <article class="pa"><figure><img src="res_nca.jpg" alt="Static teacher, trainable teacher and student with dynamic loss weighting" width="1200" height="614" loading="lazy"><figcaption>Framework: two teachers + one student, dynamic loss weighting</figcaption></figure><div class="pb"><div class="hk">2025 · NEURAL COMPUTING AND APPLICATIONS 37 · SCIE · SECOND AUTHOR</div><b><a class="lk" href="https://doi.org/10.1007/s00521-025-11367-3" target="_blank" rel="noopener">Multi-Model Anomaly Detection for Industrial Inspection with Dynamic Loss Weighting</a></b><p class="au">Willy Fitra Hendria, <strong>Hanbi Kim</strong>, Daeho Seo</p><dl><dt>Problem</dt><dd>Defects are rare in manufacturing data, and models pre-trained on large datasets alone miss features specific to industrial images</dd><dt>Method</dt><dd>A static teacher (PDN) and a trainable teacher (autoencoder) jointly teach a student. Dynamic loss weighting tunes each teacher's share during training, and a soft-hard feature loss focuses on subtle high-error defect regions</dd><dt>Result</dt><dd>Up to +0.6%p AUPRO on MVTec AD and +0.4%p AU-ROC on VisA over the baseline, with no experimental tuning needed across datasets</dd></dl><div class="chips"><span>Knowledge Distillation</span><span>EfficientAD</span><span>MVTec · VisA</span></div></div></article>
+  </div>
+  <h3 class="pg">KCI / Korean Conference</h3><div class="pp">
+    <article class="pa"><figure><img src="res_blur.jpg" alt="Edge Attention Module using edge maps as attention inside residual blocks" width="1200" height="544" loading="lazy"><figcaption>Model: residual blocks + Edge Attention Module</figcaption></figure><div class="pb"><div class="hk">2025 · JOURNAL OF INTELLIGENCE AND INFORMATION SYSTEMS 31(3) · KCI · FIRST AUTHOR</div><b><a class="lk" href="https://www.jiisonline.org/files/DLA/20250930202945_03.pdf" target="_blank" rel="noopener">Edge Attention-Based Residual Network for Gender and Age Estimation on Blurred Face Images</a></b><p class="au"><strong>Hanbi Kim</strong> et al.</p><dl><dt>Problem</dt><dd>When faces are deliberately blurred for privacy (de-identification), as in hospital or public CCTV, even pre-trained face models can barely estimate gender and age. The task is to predict attributes from the blurred image as is, without deblurring</dd><dt>Method</dt><dd>24,108 UTKFace images de-identified with Gaussian blur to SSIM below 0.80. An Edge Attention Module multiplies Canny edge maps between ResNet18 residual blocks, lowering the edge threshold as training goes on to add finer edges step by step</dd><dt>Result</dt><dd>Best among compared models on blurred images: gender accuracy 0.80 and F1 0.82, age MAE 10.03 and R² 0.44 (VGGFace on blurred: 0.58, 0.64, MAE 15.50)</dd></dl><div class="chips"><span>De-identification</span><span>Canny Edge</span><span>ResNet18</span><span>UTKFace</span></div></div></article>
+    <article class="pa"><figure><img src="res_lens.jpg" alt="Lens with an impurity, predicted heat map and abnormal prediction" width="1200" height="408" loading="lazy"><figcaption>EfficientAD result: image · heat map · prediction (impurity)</figcaption></figure><div class="pb"><div class="hk">2024 · JOURNAL OF SOCIETY OF KOREA INDUSTRIAL AND SYSTEMS ENGINEERING 47(1) · KCI · FIRST AUTHOR</div><b><a class="lk" href="https://doi.org/10.11627/jksie.2024.47.1.009" target="_blank" rel="noopener">Performance Comparison and Application of Deep Learning-Based Lens Anomaly Detection Algorithms</a></b><p class="au"><strong>Hanbi Kim</strong>, Daeho Seo</p><dl><dt>Problem</dt><dd>Defect data for transparent contact lenses in liquid is hard to collect, and defects such as impurities, missing lenses or stacked lenses are hard to define in advance</dd><dt>Method</dt><dd>Unsupervised anomaly detection trained only on normal data (PaDiM, FastFlow, CFlow, EfficientAD and more), validated on MVTec AD and then compared on lens data</dd><dt>Result</dt><dd>EfficientAD reached 0.97 image-level AUROC and F1 with the fastest inference, fit for real-time inspection; pixel-level F1 of 0.18 limits defect localization</dd></dl><div class="chips"><span>EfficientAD</span><span>PaDiM</span><span>Unsupervised AD</span></div></div></article>
+  </div></section>
+ </div>
 </div>
 
-<footer class="ft"><span data-ko="최근 업데이트 2026.10" data-en="Last updated 2026.10">Last updated 2026.10</span><span>hanbikim8@gmail.com</span><a class="lk" href="https://github.com/Hanbi-Kim" target="_blank" rel="noopener">github.com/Hanbi-Kim</a></footer>
+<footer class="ft"><span data-ko="최근 업데이트 2026.10" data-en="Last updated 2026.10">Last updated 2026.10</span><span>hanbikim8@gmail.com</span><a class="lk" href="https://www.linkedin.com/in/hanbi-kim8/" target="_blank" rel="noopener">LinkedIn</a><a class="lk" href="https://github.com/Hanbi-Kim" target="_blank" rel="noopener">GitHub</a><a class="lk" href="https://scholar.google.com/citations?user=hsVdxjYAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a><a class="lk" href="https://orcid.org/0009-0009-5512-7993" target="_blank" rel="noopener">ORCID</a></footer>
 
 <script>
 (() => {
-  const TABS = ["about", "gov", "projects"];
+  const TABS = ["about", "projects", "gov", "research", "field"];
   let lang = "en", tab = "about";
   const render = () => {
     document.getElementById("ko").hidden = lang !== "ko";
@@ -559,12 +1048,17 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
       a.textContent = a.dataset[lang];
       if (a.dataset.t === tab) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
     });
+    { // 좁은 화면: 지금 탭이 탭 줄 안에 보이게
+      const n = document.querySelector(".tabs"), a = n.querySelector("[aria-current]");
+      const r = a.getBoundingClientRect(), nr = n.getBoundingClientRect();
+      if (r.right > nr.right) n.scrollLeft += r.right - nr.right; else if (r.left < nr.left) n.scrollLeft -= nr.left - r.left;
+    }
     try { localStorage.setItem("pf.lang", lang); } catch (e) {}
   };
   const fromHash = () => {
     const h = location.hash.replace("#", "");
     if (h === "en" || h === "ko") lang = h;
-    else if (TABS.includes(h)) tab = h;
+    else if (TABS.includes(h)) { tab = h; scrollTo(0, 0); }
     render();
   };
   document.querySelector(".lang").addEventListener("click", e => { const b = e.target.closest("button[data-l]"); if (b) { lang = b.dataset.l; render(); } });
