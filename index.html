@@ -87,11 +87,18 @@ section > h2 small { font-weight: 400; font-family: var(--mono); font-size: 12px
 .top { max-width: 860px; margin: 0 auto; padding-top: calc(env(safe-area-inset-top, 0px) + 16px); display: flex; align-items: center; gap: 18px; }
 .brand { font-weight: 700; font-size: 15px; color: var(--fg); text-decoration: none; letter-spacing: -.01em; white-space: nowrap; }
 .top .lang { margin-left: auto; }
-@media (max-width: 480px) { .brand { display: none; } }
 .tabs { display: flex; gap: 2px; min-width: 0; overflow-x: auto; scrollbar-width: none; }
 .tabs::-webkit-scrollbar { display: none; }
 .top .lang { flex: none; }
-@media (max-width: 480px) { .top { gap: 8px; } .tabs a { padding: 8px 9px; } }
+/* 좁은 화면: 이름·언어 한 줄, 탭은 아래 전체 폭 한 줄. 넘치면 가장자리가 흐려져 더 있음을 보여 줌 */
+@media (max-width: 720px) {
+  .top { flex-wrap: wrap; row-gap: 4px; gap: 8px; }
+  .tabs { order: 3; flex: 1 0 100%; margin: 0 -6px; padding: 0 6px; }
+  .top .tabs a { padding: 8px 7px; font-size: 14px; }
+  .tabs.more-r { -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(to right, #000 calc(100% - 36px), transparent); }
+  .tabs.more-l { -webkit-mask-image: linear-gradient(to left, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(to left, #000 calc(100% - 36px), transparent); }
+  .tabs.more-l.more-r { -webkit-mask-image: linear-gradient(to right, transparent, #000 36px, #000 calc(100% - 36px), transparent); mask-image: linear-gradient(to right, transparent, #000 36px, #000 calc(100% - 36px), transparent); }
+}
 .tabs a { font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--mute); text-decoration: none; padding: 8px 12px; border-radius: 6px; white-space: nowrap; }
 .tabs a:hover { color: var(--fg); background: var(--soft); }
 .tabs a[aria-current="page"] { color: var(--fg); font-weight: 600; box-shadow: inset 0 -2px 0 var(--fg); border-radius: 0; }
@@ -1050,9 +1057,17 @@ with open("vibration.csv", "a", newline="") as f:
       const n = document.querySelector(".tabs"), a = n.querySelector("[aria-current]");
       const r = a.getBoundingClientRect(), nr = n.getBoundingClientRect();
       if (r.right > nr.right) n.scrollLeft += r.right - nr.right; else if (r.left < nr.left) n.scrollLeft -= nr.left - r.left;
+      edge();
     }
     try { localStorage.setItem("pf.lang", lang); } catch (e) {}
   };
+  const edge = () => { // 탭 줄이 넘칠 때 가려진 쪽 가장자리를 흐리게
+    const n = document.querySelector(".tabs");
+    n.classList.toggle("more-l", n.scrollLeft > 2);
+    n.classList.toggle("more-r", n.scrollLeft + n.clientWidth < n.scrollWidth - 2);
+  };
+  document.querySelector(".tabs").addEventListener("scroll", edge, { passive: true });
+  window.addEventListener("resize", edge);
   const fromHash = () => {
     const h = location.hash.replace("#", "");
     if (h === "en" || h === "ko") lang = h;
